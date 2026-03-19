@@ -23,4 +23,16 @@ const nav = [
   --color-theme: #2dcdff;
   --color-white: #ffffff;
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 </style>
