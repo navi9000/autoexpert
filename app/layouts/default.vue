@@ -6,7 +6,14 @@ interface NavItem {
 interface Props {
   nav: NavItem[]
 }
+
 const props = defineProps<Props>()
+
+const menuIsOpen = ref(false)
+
+const toggleMenu = () => {
+  menuIsOpen.value = !menuIsOpen.value
+}
 </script>
 
 <template>
@@ -20,6 +27,21 @@ const props = defineProps<Props>()
       <Button variant="default" filling="transparent">Заказать звонок</Button>
     </header>
   </NuxtLayout>
+  <Button variant="menu" class="menubutton" @click="toggleMenu">{{
+    menuIsOpen ? "Закрыть" : "Меню"
+  }}</Button>
+  <nav
+    class="menucontainer"
+    :class="[{ [`menucontainer_hidden`]: !menuIsOpen }]"
+  >
+    <ul v-for="{ label, to } in nav" class="menulist">
+      <li>
+        <NuxtLink :to class="menulink" @click="toggleMenu">{{
+          label
+        }}</NuxtLink>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <style scoped>
@@ -53,5 +75,41 @@ const props = defineProps<Props>()
 .hours {
   font-size: 16px;
   color: var(--color-white);
+}
+.menubutton {
+  position: fixed;
+  transform-origin: right bottom;
+  rotate: -90deg;
+  top: 50%;
+  right: 0;
+  z-index: 15;
+}
+
+.menucontainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.menucontainer_hidden {
+  translate: 100vw;
+}
+
+.menulist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menulink {
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  @media screen and (min-width: 990px) {
+    font-size: 64px;
+  }
 }
 </style>

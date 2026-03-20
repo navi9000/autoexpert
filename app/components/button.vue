@@ -4,7 +4,12 @@ interface DefaultButton {
   filling: "solid" | "transparent"
 }
 
-type Props = DefaultButton
+interface MenuButton {
+  variant: "menu"
+  filling?: never
+}
+
+type Props = DefaultButton | MenuButton
 
 const props = defineProps<Props>()
 </script>
@@ -34,8 +39,12 @@ const props = defineProps<Props>()
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
+  transition: 300ms;
   @media screen and (min-width: 990px) {
     font-size: 16px;
+  }
+  &:hover {
+    opacity: 0.7;
   }
 }
 
@@ -47,5 +56,22 @@ const props = defineProps<Props>()
 .button_fillingtransparent {
   background-color: transparent;
   color: var(--color-theme);
+}
+
+.button_menu {
+  border-radius: 8px 8px 0 0;
+  border: none;
+  background: #09121c;
+  mix-blend-mode: screen;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  padding: 6px 18px;
+  text-transform: uppercase;
+  @media screen and (min-width: 900px) {
+    font-size: 20px;
+    padding: 13px 25px;
+  }
 }
 </style>
