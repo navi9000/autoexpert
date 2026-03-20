@@ -31,6 +31,13 @@ const nav = [
   font-family: "Montserrat";
 }
 
+body {
+  min-width: 320px;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: black;
+}
+
 a {
   text-decoration: none;
   color: inherit;

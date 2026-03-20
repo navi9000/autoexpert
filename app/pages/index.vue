@@ -1,3 +1,3 @@
 <template>
-  <div>Index page</div>
+  <div style="background-color: black">Index page</div>
 </template>

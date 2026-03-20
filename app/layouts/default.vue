@@ -17,6 +17,11 @@ const props = defineProps<Props>()
         <a href="tel:00000000000" class="phone">+000 0000 00 00</a>
         <p class="hours">Ежедневно с 09:00 до 21:00</p>
       </div>
+      <Button
+        variant="default"
+        filling="transparent"
+        innerHTML="Заказать звонок"
+      />
     </header>
   </NuxtLayout>
 </template>
@@ -25,6 +30,11 @@ const props = defineProps<Props>()
 .header {
   display: flex;
   align-items: center;
+  gap: 10px;
+  padding-block: 28px;
+  @media screen and (min-width: 990px) {
+    gap: 20px;
+  }
 }
 .logo {
   text-transform: uppercase;
