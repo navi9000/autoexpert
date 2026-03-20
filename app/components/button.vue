@@ -18,7 +18,9 @@ const props = defineProps<Props>()
         [`button_filling${filling}`]: filling,
       },
     ]"
-  ></button>
+  >
+    <slot />
+  </button>
 </template>
 
 <style scoped>

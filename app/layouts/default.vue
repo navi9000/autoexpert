@@ -17,11 +17,7 @@ const props = defineProps<Props>()
         <a href="tel:00000000000" class="phone">+000 0000 00 00</a>
         <p class="hours">Ежедневно с 09:00 до 21:00</p>
       </div>
-      <Button
-        variant="default"
-        filling="transparent"
-        innerHTML="Заказать звонок"
-      />
+      <Button variant="default" filling="transparent">Заказать звонок</Button>
     </header>
   </NuxtLayout>
 </template>
