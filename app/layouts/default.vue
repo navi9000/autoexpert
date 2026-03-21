@@ -34,11 +34,13 @@ const toggleMenu = () => {
     class="menucontainer"
     :class="[{ [`menucontainer_hidden`]: !menuIsOpen }]"
   >
-    <ul v-for="{ label, to } in nav" class="menulist">
-      <li>
-        <NuxtLink :to class="menulink" @click="toggleMenu">{{
-          label
-        }}</NuxtLink>
+    <ul class="menulist">
+      <li v-for="{ label, to } in nav" class="menulinkwrapper">
+        <div class="menulinkinnerwrapper">
+          <NuxtLink :to class="menulink" @click="toggleMenu">{{
+            label
+          }}</NuxtLink>
+        </div>
       </li>
     </ul>
   </nav>
@@ -91,6 +93,7 @@ const toggleMenu = () => {
   left: 0;
   height: 100vh;
   width: 100vw;
+  background-color: var(--color-background-menu);
 }
 
 .menucontainer_hidden {
@@ -98,9 +101,28 @@ const toggleMenu = () => {
 }
 
 .menulist {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.menulinkwrapper {
+  background: linear-gradient(to right, transparent, white, transparent);
+}
+
+.menulinkwrapper:not(:last-child) {
+  border-bottom: 1px solid transparent;
+}
+
+.menulinkinnerwrapper {
+  background-color: var(--color-background-menu);
+  height: 100%;
+  width: 100%;
+  padding-block: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .menulink {

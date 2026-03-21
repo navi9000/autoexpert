@@ -22,6 +22,7 @@ const nav = [
 :root {
   --color-theme: #2dcdff;
   --color-white: #ffffff;
+  --color-background-menu: #0a121a;
 }
 
 * {
