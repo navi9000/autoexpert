@@ -43,6 +43,7 @@ const toggleMenu = () => {
       </ul>
     </nav>
   </Transition>
+  <slot />
 </template>
 
 <style scoped>
