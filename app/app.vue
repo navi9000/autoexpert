@@ -1,12 +1,26 @@
 <script setup lang="ts">
+import { m } from "vue-router/dist/index-DFCq6eJK.js"
+
 const nav = [
   {
-    label: "Home",
+    label: "Подбор авто",
     to: "/",
   },
   {
-    label: "About",
+    label: "Услуги по ремонту",
+    to: "/repairs",
+  },
+  {
+    label: "Акции",
+    to: "/promotions",
+  },
+  {
+    label: "О компании",
     to: "/about",
+  },
+  {
+    label: "Контакты",
+    to: "/contacts",
   },
 ]
 </script>
