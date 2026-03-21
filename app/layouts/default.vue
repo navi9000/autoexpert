@@ -130,8 +130,13 @@ const toggleMenu = () => {
   font-size: 22px;
   text-transform: uppercase;
   color: var(--color-white);
+  transition: all 300ms;
   @media screen and (min-width: 990px) {
     font-size: 64px;
+  }
+  &:hover {
+    color: var(--color-theme);
+    text-shadow: 0 0 14px 0 rgba(45, 205, 255, 0.68);
   }
 }
 </style>
