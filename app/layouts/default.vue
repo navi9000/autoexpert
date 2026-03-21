@@ -30,20 +30,19 @@ const toggleMenu = () => {
   <Button variant="menu" class="menubutton" @click="toggleMenu">{{
     menuIsOpen ? "Закрыть" : "Меню"
   }}</Button>
-  <nav
-    class="menucontainer"
-    :class="[{ [`menucontainer_hidden`]: !menuIsOpen }]"
-  >
-    <ul class="menulist">
-      <li v-for="{ label, to } in nav" class="menulinkwrapper">
-        <div class="menulinkinnerwrapper">
-          <NuxtLink :to class="menulink" @click="toggleMenu">{{
-            label
-          }}</NuxtLink>
-        </div>
-      </li>
-    </ul>
-  </nav>
+  <Transition name="navmenu">
+    <nav v-if="menuIsOpen" class="menucontainer">
+      <ul class="menulist">
+        <li v-for="{ label, to } in nav" class="menulinkwrapper">
+          <div class="menulinkinnerwrapper">
+            <NuxtLink :to class="menulink" @click="toggleMenu">{{
+              label
+            }}</NuxtLink>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </Transition>
 </template>
 
 <style scoped>
@@ -138,5 +137,15 @@ const toggleMenu = () => {
     color: var(--color-theme);
     text-shadow: 0 0 14px 0 rgba(45, 205, 255, 0.68);
   }
+}
+
+.navmenu-enter-active,
+.navmenu-leave-active {
+  transition: 300ms;
+}
+
+.navmenu-enter-from,
+.navmenu-leave-to {
+  translate: 100vw 0;
 }
 </style>
