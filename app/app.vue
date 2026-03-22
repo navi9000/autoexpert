@@ -48,7 +48,6 @@ const nav = [
 
 body {
   min-width: 320px;
-  overflow: hidden;
   min-height: 100vh;
   background-color: black;
 }

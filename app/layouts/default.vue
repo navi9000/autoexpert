@@ -17,7 +17,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <NuxtLayout name="container">
+  <Container>
     <header class="header">
       <NuxtLink to="/" class="logo">Logo</NuxtLink>
       <div class="textwrapper">
@@ -26,7 +26,7 @@ const toggleMenu = () => {
       </div>
       <Button variant="default" filling="transparent">Заказать звонок</Button>
     </header>
-  </NuxtLayout>
+  </Container>
   <Button variant="menu" class="menubutton" @click="toggleMenu">{{
     menuIsOpen ? "Закрыть" : "Меню"
   }}</Button>

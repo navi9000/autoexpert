@@ -1,9 +1,17 @@
+<script setup lang="ts">
+interface Props {
+  tag?: keyof HTMLElementTagNameMap
+}
+
+const { tag = "div" } = defineProps<Props>()
+</script>
+
 <template>
-  <div class="container">
+  <component :is="tag" class="container">
     <div class="inlay">
       <slot />
     </div>
-  </div>
+  </component>
 </template>
 
 <style scoped>
