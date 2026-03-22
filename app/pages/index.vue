@@ -1,9 +1,9 @@
 <template>
   <div>
-    <ServiceCard
-      img-src="engine.png"
-      title="Обслуживание и ремонт двигателя"
-      description="Ремонт двигателя и комплектующих. Обслуживание навесного оборудования и систем а/с"
+    <PromotionCard
+      imgSrc="engine.png"
+      title="Вызов эвакуатора"
+      description="Организуем подачу эвакуатора. Сумма эвакуации фиксированная для автомобилей до 2,5 тонны"
     />
   </div>
 </template>

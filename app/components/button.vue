@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface DefaultButton {
-  variant: "default"
+  variant?: "default"
   filling: "solid" | "transparent"
 }
 
@@ -11,7 +11,7 @@ interface MenuButton {
 
 type Props = DefaultButton | MenuButton
 
-const props = defineProps<Props>()
+const { variant = "default" } = defineProps<Props>()
 </script>
 
 <template>
