@@ -6,13 +6,17 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const getImageUrl = (name: string) => {
+  return new URL(`../assets/img/${name}`, import.meta.url).href
+}
 </script>
 
 <template>
   <article class="article">
     <h3 class="title">{{ title }}</h3>
     <p class="description">{{ description }}</p>
-    <img :src="imgSrc" alt="photo" />
+    <img :src="getImageUrl(imgSrc)" alt="photo" class="img" />
   </article>
 </template>
 
@@ -24,6 +28,7 @@ const props = defineProps<Props>()
   display: flex;
   flex-direction: column;
   gap: 40px;
+  height: 400px;
 }
 
 .title {
