@@ -3,6 +3,9 @@
 <template>
   <Container tag="section">
     <div class="about-inlay">
+      <div class="img-container">
+        <img src="~/assets/img/mechanic 1.png" alt="technician" class="img" />
+      </div>
       <div class="text-wrapper">
         <Heading tag="h1">О компании</Heading>
         <p>
@@ -25,9 +28,6 @@
           Вашим автомобилям на всех этапах работы.
         </p>
       </div>
-      <div class="img-container">
-        <img src="~/assets/img/mechanic 1.png" alt="technician" class="img" />
-      </div>
     </div>
   </Container>
 </template>
@@ -45,11 +45,16 @@
 }
 
 .about-inlay {
+  --about-padding: 0;
+  --about-top-offset: 0;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  padding: var(--about-padding);
+  overflow: hidden;
   @media screen and (min-width: 900px) {
-    grid-template-columns: 400px 1fr;
+    --about-padding: 20px;
+
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.1) 0%,
@@ -57,7 +62,16 @@
     );
   }
   @media screen and (min-width: 1420px) {
-    grid-template-columns: 700px 1fr;
+    --about-padding: 40px;
+    --about-top-offset: 200px;
+
+    grid-template-columns: clamp(1px, 40%, 700px) 1fr;
+    background: linear-gradient(
+      180deg,
+      transparent var(--about-top-offset),
+      rgba(255, 255, 255, 0.1) var(--about-top-offset),
+      rgba(255, 255, 255, 0.1) 100%
+    );
   }
 }
 
@@ -66,33 +80,36 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media screen and (min-width: 900px) {
+    padding-block: initial;
+  }
+  @media screen and (min-width: 1420px) {
+    padding-block: var(--about-top-offset) 0;
+  }
 }
 
 .img-container {
   position: relative;
   height: 100%;
   width: 100%;
+  max-width: 400px;
+  grid-row: 2 / 3;
+  margin-inline: auto;
 
   @media screen and (min-width: 900px) {
-    grid-column: 1 / 2;
+    transform: translateY(var(--about-padding));
+  }
+
+  @media screen and (min-width: 1420px) {
+    width: 100%;
     grid-row: 1 / 2;
+    max-width: unset;
   }
 }
 
 .img {
   width: 100%;
   aspect-ratio: 0.7216;
-
-  @media screen and (min-width: 900px) {
-    position: absolute;
-    height: calc(100% + 100px);
-    left: 0;
-    bottom: 0;
-    object-fit: cover;
-  }
-  @media screen and (min-width: 1420px) {
-    height: calc(100% + 200px);
-  }
 }
 
 p {
@@ -101,6 +118,9 @@ p {
   line-height: 150%;
   color: #fff;
   @media screen and (min-width: 900px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1620px) {
     font-size: 20px;
   }
 }
