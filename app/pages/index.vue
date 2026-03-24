@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Accordion from "~/components/accordion.vue"
+</script>
 
 <template>
-  <div></div>
+  <div>Index</div>
 </template>
