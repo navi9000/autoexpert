@@ -24,19 +24,20 @@ const isOpen = ref(false)
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  gap: 1px;
 }
 
 .answerwrapper-enter-active,
 .answerwrapper-leave-active {
-  transition: 300ms;
-  height: 200px;
+  transition: 500ms ease-in;
+  max-height: 1024px;
+  height: auto;
 }
 
 .answerwrapper-enter-from,
 .answerwrapper-leave-to {
-  height: 0;
-  overflow-y: scroll;
-  transition: height 0.5s;
+  max-height: 0;
+  transition: 500ms ease-out;
 }
 
 .answer {

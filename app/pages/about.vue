@@ -1,3 +1,4 @@
 <template>
   <About />
+  <Faq />
 </template>

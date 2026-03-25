@@ -94,6 +94,7 @@ const toggleMenu = () => {
   height: 100vh;
   width: 100vw;
   background-color: var(--color-background-menu);
+  z-index: 10;
 }
 
 .menucontainer_hidden {
