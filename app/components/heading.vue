@@ -20,6 +20,10 @@ const { tag = "div", centered = false } = defineProps<Props>()
   color: var(--color-theme);
 
   @media screen and (min-width: 900px) {
+    font-size: 32px;
+  }
+
+  @media screen and (min-width: 1420px) {
     font-size: 48px;
   }
 }
