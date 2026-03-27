@@ -1,5 +1,6 @@
 <template>
   <About />
   <Faq />
-  <SearchUnsuccessful />
+  <AboutSearchUnsuccessful />
+  <Contacts title="Свяжитесь с нами" />
 </template>
