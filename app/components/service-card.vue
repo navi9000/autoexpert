@@ -6,17 +6,13 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-
-const getImageUrl = (name: string) => {
-  return new URL(`../assets/img/${name}`, import.meta.url).href
-}
 </script>
 
 <template>
   <article class="article">
     <h3 class="title">{{ title }}</h3>
     <p class="description">{{ description }}</p>
-    <img :src="getImageUrl(imgSrc)" alt="photo" class="img" />
+    <img :src="imgSrc" alt="photo" class="img" />
   </article>
 </template>
 

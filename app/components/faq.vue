@@ -17,7 +17,6 @@ const isOpen = ref([false, false, false])
 
 const toggle = (index: number) => {
   isOpen.value = isOpen.value.map((value, i) => (i === index ? !value : value))
-  console.log({ index, isOpen: isOpen.value })
 }
 </script>
 
