@@ -8,12 +8,6 @@ const isLargeScreen = useIsLargeScreen()
 
 <template>
   <Container tag="section" class="section">
-    <img
-      v-if="isLargeScreen"
-      src="~/assets/img/white-car.png"
-      alt="car"
-      class="car"
-    />
     <div class="top-inlay">
       <h1 class="heading"><span>Услуги</span> нашего сервиса</h1>
       <ul class="list">
@@ -21,38 +15,55 @@ const isLargeScreen = useIsLargeScreen()
       </ul>
       <Button filling="solid">Задать вопрос</Button>
     </div>
+    <img
+      v-if="!isLargeScreen"
+      src="~/assets/img/white-car.png"
+      alt="car"
+      class="car"
+    />
   </Container>
 </template>
 
 <style scoped>
 .section {
   background-image: url("~/assets/img/services_bg.png");
-  background-size: 100%;
+  background-size: 100% max-content;
   background-repeat: no-repeat;
   background-position: top 0% right 0%;
-  height: 100vh;
+
   @media screen and (min-width: 900px) {
-    background-size: 50%;
+    background-size:
+      60%,
+      50% 100%;
+    background-image:
+      url("~/assets/img/white-car.png"), url("~/assets/img/services_bg.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      top 50% right 0%,
+      top 0% right 0%;
+    height: 100vh;
   }
 }
 
 .top-inlay {
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
+  padding-block: 40px;
+  @media screen and (min-width: 900px) {
+    height: 100vh;
+    padding-block: initial;
+  }
 }
 
 .car {
-  order: 2;
-  @media screen and (min-width: 900px) {
-    order: initial;
-    float: right;
-    width: 60%;
-    translate: 0 50%;
-  }
+  width: 100%;
+  height: auto;
+  max-height: 256px;
+  object-fit: contain;
+  object-position: top 50% right 0%;
 }
 
 .heading {
