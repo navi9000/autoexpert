@@ -6,10 +6,6 @@ interface Props {
 }
 
 defineProps<Props>()
-
-const getImageUrl = (name: string) => {
-  return new URL(`../assets/img/${name}`, import.meta.url).href
-}
 </script>
 
 <template>
@@ -17,7 +13,7 @@ const getImageUrl = (name: string) => {
     <h3 class="title">{{ title }}</h3>
     <p v-if="description" class="description">{{ description }}</p>
     <Button filling="solid" class="promo-button">Подробнее</Button>
-    <img :src="getImageUrl(imgSrc)" alt="card-image" class="background" />
+    <img :src="imgSrc" alt="card-image" class="background" />
   </article>
 </template>
 
@@ -25,14 +21,20 @@ const getImageUrl = (name: string) => {
 .card {
   position: relative;
   min-height: 324px;
-  background: linear-gradient(137deg, #010911 0%, rgba(5, 13, 21, 0) 100%);
+  background:
+    linear-gradient(137deg, #010911 0%, rgba(5, 13, 21, 0) 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
   display: flex;
   flex-direction: column;
   padding: 50px 40px;
   gap: 20px;
 
   @media screen and (min-width: 990px) {
-    width: 638px;
+    max-width: 638px;
   }
 }
 
@@ -66,6 +68,14 @@ const getImageUrl = (name: string) => {
   left: 0;
   height: 100%;
   width: 100%;
+  object-fit: cover;
+  background:
+    linear-gradient(137deg, #010911 0%, rgba(5, 13, 21, 0) 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
   z-index: -1;
 }
 </style>

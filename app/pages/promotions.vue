@@ -1,3 +1,4 @@
 <template>
-  <p>This page will be displayed at the /promotions route.</p>
+  <PromotionList />
+  <Contacts title="Свяжитесь с нами" />
 </template>
