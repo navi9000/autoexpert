@@ -17,7 +17,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <Container>
+  <Container class="header-container">
     <header class="header">
       <NuxtLink to="/" class="logo">Logo</NuxtLink>
       <div class="textwrapper">
@@ -47,6 +47,13 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .header {
   display: flex;
   align-items: center;
