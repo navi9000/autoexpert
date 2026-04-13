@@ -1,15 +1,18 @@
 <script setup lang="ts">
-const list = [
-  "Большой ассортимент услуг для вашего авто",
-  "Индивидуальный подход",
-]
 const isLargeScreen = useIsLargeScreen()
+
+const list = ["Техническая проверка", "Выездная проверка"]
 </script>
 
 <template>
   <Container tag="section" class="section">
     <div class="top-inlay">
-      <h1 class="heading"><span>Услуги</span> нашего сервиса</h1>
+      <h1 class="heading">
+        <span>Помощь<br />при</span> покупке<br />автомобиля
+      </h1>
+      <p class="subheading">
+        Подбор и проверка любых авто, включая гибридные и электрические
+      </p>
       <ul class="list">
         <li v-for="item in list">{{ item }}</li>
       </ul>
@@ -17,7 +20,7 @@ const isLargeScreen = useIsLargeScreen()
     </div>
     <img
       v-if="isLargeScreen !== null && !isLargeScreen"
-      src="~/assets/img/white-car.png"
+      src="/img/gray_car.png"
       alt="car"
       class="car"
     />
@@ -26,7 +29,7 @@ const isLargeScreen = useIsLargeScreen()
 
 <style scoped>
 .section {
-  background-image: url("~/assets/img/services_bg.png");
+  background-image: url("/img/main_top_bg.png");
   background-size: 100% max-content;
   background-repeat: no-repeat;
   background-position: top 0% right 0%;
@@ -35,8 +38,7 @@ const isLargeScreen = useIsLargeScreen()
     background-size:
       60%,
       50% 100%;
-    background-image:
-      url("~/assets/img/white-car.png"), url("~/assets/img/services_bg.png");
+    background-image: url("/img/gray_car.png"), url("/img/main_top_bg.png");
     background-repeat: no-repeat, no-repeat;
     background-position:
       top 50% right 0%,
@@ -71,7 +73,7 @@ const isLargeScreen = useIsLargeScreen()
   font-size: 32px;
   line-height: 116%;
   text-transform: uppercase;
-  max-width: 7em;
+  max-width: 8em;
   color: var(--color-white);
   @media screen and (min-width: 900px) {
     font-size: 72px;
@@ -80,6 +82,17 @@ const isLargeScreen = useIsLargeScreen()
 }
 .heading span {
   color: var(--color-theme);
+}
+
+.subheading {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 131%;
+  color: var(--color-white);
+  @media screen and (min-width: 900px) {
+    font-size: 24px;
+    line-height: 117%;
+  }
 }
 
 .list {

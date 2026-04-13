@@ -3,5 +3,5 @@ import Accordion from "~/components/accordion.vue"
 </script>
 
 <template>
-  <div>Index</div>
+  <MainTop />
 </template>
