@@ -4,7 +4,7 @@
       <Heading tag="h2">Видим автомобиль насквозь</Heading>
       <p class="subheading">Что мы проверяем в автомобиле</p>
     </div>
-    <div>
+    <div v-if="isLargeScreen !== null && !isLargeScreen">
       <Accordion v-for="(item, index) in list" class="accordion-item">
         <template #question>
           <div class="question-container">
@@ -25,6 +25,45 @@
           <p class="answer">{{ item.description }}</p>
         </template>
       </Accordion>
+    </div>
+    <div v-else-if="isLargeScreen" class="list-container">
+      <img src="/img/car_inside_out.png" alt="car" class="car" />
+      <div>
+        <div
+          v-for="(item, index) in list.slice(0, 6)"
+          class="accordion-item"
+          @mouseenter="toggleOnLargeScreen(index)"
+          @mouseleave="toggleOnLargeScreen(index)"
+        >
+          <div class="question-container">
+            <img :src="item.icon" alt="icon" class="icon" />
+            <p class="question">{{ item.title }}</p>
+          </div>
+          <Transition name="answerwrapper">
+            <p class="answer" v-if="isOpenOnLargeScreen[index]">
+              {{ item.description }}
+            </p>
+          </Transition>
+        </div>
+      </div>
+      <div>
+        <div
+          v-for="(item, index) in list.slice(6, 12)"
+          class="accordion-item"
+          @mouseenter="toggleOnLargeScreen(index + 6)"
+          @mouseleave="toggleOnLargeScreen(index + 6)"
+        >
+          <div class="question-container">
+            <img :src="item.icon" alt="icon" class="icon" />
+            <p class="question">{{ item.title }}</p>
+          </div>
+          <Transition name="answerwrapper">
+            <p class="answer" v-if="isOpenOnLargeScreen[index + 6]">
+              {{ item.description }}
+            </p>
+          </Transition>
+        </div>
+      </div>
     </div>
   </Container>
 </template>
@@ -62,6 +101,22 @@
   }
 }
 
+.list-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 40px;
+}
+
+.car {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 706px;
+  width: 345px;
+}
+
 .accordion-item {
   padding-block: 20px;
   &:not(:last-of-type) {
@@ -76,6 +131,7 @@
 
   @media screen and (min-width: 900px) {
     gap: 20px;
+    padding-inline: 150px;
   }
 }
 
@@ -118,6 +174,27 @@
   font-size: 14px;
   line-height: 136%;
   color: var(--color-white);
+  overflow: hidden;
+  @media screen and (min-width: 900px) {
+    padding-inline: 150px;
+  }
+}
+
+.answerwrapper-enter-active,
+.answerwrapper-leave-active {
+  transition: 500ms ease-in;
+  max-height: 1024px;
+  height: auto;
+}
+
+.answerwrapper-enter-from {
+  max-height: 0;
+  transition: 500ms ease-out;
+}
+
+.answerwrapper-leave-to {
+  max-height: 0;
+  transition: 250ms ease-out;
 }
 </style>
 
@@ -202,4 +279,14 @@ const isOpen = ref(list.map(() => false))
 const toggle = (index: number) => {
   isOpen.value = isOpen.value.map((value, i) => (i === index ? !value : value))
 }
+
+const isOpenOnLargeScreen = ref(list.map(() => false))
+
+const toggleOnLargeScreen = (index: number) => {
+  isOpenOnLargeScreen.value = isOpenOnLargeScreen.value.map((value, i) =>
+    i === index ? !value : value,
+  )
+}
+
+const isLargeScreen = useIsLargeScreen()
 </script>
