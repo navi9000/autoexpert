@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// import { useSwiper } from "nuxt-swiper"
-import { ref } from "vue"
-
 const isLargeScreen = useIsLargeScreen()
 
 const list = [

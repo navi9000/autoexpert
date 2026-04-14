@@ -5,4 +5,5 @@ import Accordion from "~/components/accordion.vue"
 <template>
   <MainTop />
   <MainInsideOut />
+  <MainServices />
 </template>
