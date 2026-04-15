@@ -14,17 +14,21 @@ const menuIsOpen = ref(false)
 const toggleMenu = () => {
   menuIsOpen.value = !menuIsOpen.value
 }
+
+const isLargeScreen = useIsLargeScreen()
 </script>
 
 <template>
   <Container class="header-container">
     <header class="header">
       <NuxtLink to="/" class="logo">Logo</NuxtLink>
-      <div class="textwrapper">
+      <div class="textwrapper" v-if="isLargeScreen">
         <a href="tel:00000000000" class="phone">+000 0000 00 00</a>
         <p class="hours">Ежедневно с 09:00 до 21:00</p>
       </div>
-      <Button variant="default" filling="transparent">Заказать звонок</Button>
+      <Button variant="default" filling="transparent" v-if="isLargeScreen"
+        >Заказать звонок</Button
+      >
     </header>
   </Container>
   <Button variant="menu" class="menubutton" @click="toggleMenu">{{
@@ -67,7 +71,13 @@ const toggleMenu = () => {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--color-theme);
-  margin-right: auto;
+  margin-inline: auto;
+  font-size: 36px;
+
+  @media screen and (min-width: 900px) {
+    margin-right: auto;
+    font-size: 16px;
+  }
 }
 
 .textwrapper {
