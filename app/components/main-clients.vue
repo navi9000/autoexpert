@@ -185,9 +185,10 @@ const list = [
   align-items: center;
   gap: 10px;
 
-  @media sceen and (min-width: 900px) {
+  @media screen and (min-width: 900px) {
     justify-content: center;
     width: 100%;
+    height: 125px;
   }
 }
 
