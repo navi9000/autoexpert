@@ -24,21 +24,26 @@ const list = [
       <div class="card">
         <img src="/img/clients_car.png" alt="car" class="img" />
         <div class="content">
-          <div class="location-container">
-            <img src="/img/map-marker.svg" alt="pointer" class="pointer" />
-            <span class="location">Лимасол</span>
+          <div class="top-section">
+            <div class="location-container">
+              <img src="/img/map-marker.svg" alt="pointer" class="pointer" />
+              <span class="location">Лимассол</span>
+            </div>
+            <div class="pagination-container"></div>
           </div>
           <h3 class="h3">Проверили Lexus NX 200t в редком синем цвете</h3>
           <p class="line">
             В рамках услуги “Подбор автомобиля под ключ” в Лимассоле был
             осмотрен автомобиль Lexus LX 570
           </p>
-          <h4 class="h4">Результат</h4>
-          <p class="line">
-            Данный автомобиль мы рекомендовали к покупке, так как был сделан
-            рестайлинг с 12 года. Видно, что автомобиль обслуживался. Красивый и
-            редкий синий цвет.
-          </p>
+          <div class="result-container">
+            <h4 class="h4">Результат</h4>
+            <p class="line">
+              Данный автомобиль мы рекомендовали к покупке, так как был сделан
+              рестайлинг с 12 года. Видно, что машину обслуживали. Красивый и
+              редкий синий цвет.
+            </p>
+          </div>
           <div class="list-container">
             <div v-for="item in list" class="list-item">
               <p class="item-title">{{ item.title }}</p>
@@ -62,7 +67,7 @@ const list = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 
   @media screen and (min-width: 900px) {
     gap: 40px;
@@ -106,6 +111,12 @@ const list = [
   }
 }
 
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .location-container {
   border-radius: 8px;
   padding: 5px 10px;
@@ -118,6 +129,11 @@ const list = [
   align-items: center;
   gap: 10px;
   width: max-content;
+}
+
+.pagination-container {
+  height: 40px;
+  width: 1px;
 }
 
 .pointer {
@@ -158,6 +174,13 @@ const list = [
   }
 }
 
+.result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-block: 10px;
+}
+
 .h4 {
   font-size: 20px;
   color: var(--color-theme);
@@ -166,7 +189,7 @@ const list = [
 .list-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   @media screen and (min-width: 900px) {
     flex-direction: row;
     width: 100%;
@@ -204,5 +227,10 @@ const list = [
   font-size: 16px;
   text-align: center;
   color: var(--color-white);
+  max-width: 140px;
+}
+
+.list-item:not(:nth-of-type(2)) .item-description {
+  font-size: 24px;
 }
 </style>
