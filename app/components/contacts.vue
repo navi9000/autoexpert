@@ -32,13 +32,16 @@ onUnmounted(() => {
           title
         }}</Heading>
         <div class="contact-list">
-          <LabeledIcon icon-src="marker-pin.svg" label="Address" />
           <LabeledIcon
-            icon-src="compass.svg"
+            icon-src="/img/marker-pin.svg"
+            label="First avenue, 0, city name, country name"
+          />
+          <LabeledIcon
+            icon-src="/img/compass.svg"
             label="Как добраться на автомобиле?"
           />
-          <LabeledIcon icon-src="phone.svg" label="+000 0000 00 00" />
-          <LabeledIcon icon-src="mail.svg" label="mail@mail.com" />
+          <LabeledIcon icon-src="/img/phone.svg" label="+000 0000 00 00" />
+          <LabeledIcon icon-src="/img/mail.svg" label="mail@mail.com" />
         </div>
         <Button filling="solid" class="contacts-button">Заказать звонок</Button>
       </div>
@@ -53,8 +56,8 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
-  padding: 20px 30px;
+  gap: 42px;
+  padding: 30px 20px;
   width: 100%;
   @media screen and (min-width: 900px) {
     padding: 50px 150px;

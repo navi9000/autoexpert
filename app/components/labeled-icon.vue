@@ -5,15 +5,11 @@ interface Props {
 }
 
 defineProps<Props>()
-
-const getImageUrl = (name: string) => {
-  return new URL(`../assets/img/${name}`, import.meta.url).href
-}
 </script>
 
 <template>
   <div class="group">
-    <img :src="getImageUrl(iconSrc)" alt="icon" class="img" />
+    <img :src="iconSrc" alt="icon" class="img" />
     <p class="label">{{ label }}</p>
   </div>
 </template>
