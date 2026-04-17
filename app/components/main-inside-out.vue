@@ -4,7 +4,7 @@
       <Heading tag="h2">Видим автомобиль насквозь</Heading>
       <p class="subheading">Что мы проверяем в автомобиле</p>
     </div>
-    <div v-if="isLargeScreen !== null && !isLargeScreen">
+    <div v-if="isLargeScreen !== null && !isLargeScreen" class="list-container">
       <Accordion v-for="(item, index) in list" class="accordion-item">
         <template #question>
           <div class="question-container">
@@ -102,10 +102,13 @@
 }
 
 .list-container {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 40px;
+  margin-top: 10px;
+  @media screen and (min-width: 900px) {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
+  }
 }
 
 .car {
@@ -118,9 +121,12 @@
 }
 
 .accordion-item {
-  padding-block: 20px;
+  padding-block: 9.8px;
   &:not(:last-of-type) {
     border-bottom: 1px solid var(--color-white);
+  }
+  @media screen and (min-width: 900px) {
+    padding-block: 20px;
   }
 }
 
@@ -128,6 +134,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: 10px;
 
   @media screen and (min-width: 900px) {
     gap: 20px;

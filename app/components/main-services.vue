@@ -35,7 +35,7 @@
 
 <style scoped>
 .container {
-  padding-block: 20px;
+  padding-block: 30px 0;
 
   @media screen and (min-width: 900px) {
     padding-block: 40px;
@@ -47,6 +47,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin-bottom: 32px;
   @media screen and (min-width: 900px) {
     gap: 20px;
   }
