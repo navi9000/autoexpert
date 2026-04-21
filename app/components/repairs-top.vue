@@ -30,6 +30,8 @@ const isLargeScreen = useIsLargeScreen()
   background-size: 100% max-content;
   background-repeat: no-repeat;
   background-position: top 0% right 0%;
+  padding-block: 77px 94px;
+  overflow: hidden;
 
   @media screen and (min-width: 900px) {
     background-size:
@@ -59,11 +61,9 @@ const isLargeScreen = useIsLargeScreen()
 }
 
 .car {
-  width: 100%;
-  height: auto;
   max-height: 256px;
   object-fit: contain;
-  object-position: top 50% right 0%;
+  transform: translateX(-30px);
 }
 
 .heading {
@@ -83,15 +83,19 @@ const isLargeScreen = useIsLargeScreen()
 }
 
 .list {
-  list-style-position: inside;
   list-style-image: linear-gradient(var(--color-theme));
+  padding-block: 8px;
+  padding-inline: 14px;
 }
 
 .list li {
   font-weight: 600;
   font-size: 14px;
-  line-height: 200%;
+  line-height: 132%;
   color: var(--color-white);
+  &::marker {
+    font-size: 1.2em;
+  }
   @media screen and (min-width: 900px) {
     font-size: 24px;
     line-height: 117%;
