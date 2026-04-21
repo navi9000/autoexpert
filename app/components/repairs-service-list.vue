@@ -120,10 +120,10 @@ const toggle = (index: number) => {
 .question {
   font-weight: 700;
   font-size: 16px;
-  line-height: 131%;
+  line-height: 120%;
   color: var(--color-theme);
   transition: color 300ms;
-  padding-block: 20px;
+  padding-block: 16px;
   @media screen and (min-width: 900px) {
     font-size: 24px;
     line-height: 117%;

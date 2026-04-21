@@ -1,5 +1,5 @@
 <template>
-  <Container tag="section">
+  <Container tag="section" class="section">
     <div class="section-inlay">
       <div class="text-container">
         <Heading tag="h2" class="h2">Не нашли,<br />что искали?</Heading>
@@ -15,6 +15,10 @@
 </template>
 
 <style scoped>
+.section {
+  overflow: hidden;
+  padding-top: 16px;
+}
 .section-inlay {
   display: flex;
   flex-direction: column;
@@ -54,10 +58,8 @@
 .img {
   max-height: 373px;
   width: auto;
-  margin-inline: auto;
   @media screen and (min-width: 900px) {
     max-height: 480px;
-    margin-inline: initial;
   }
   @media screen and (min-width: 1420px) {
     max-height: 785px;
