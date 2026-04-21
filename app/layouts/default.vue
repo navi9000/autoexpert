@@ -75,6 +75,7 @@ const isLargeScreen = useIsLargeScreen()
   font-size: 36px;
 
   @media screen and (min-width: 900px) {
+    margin-inline: unset;
     margin-right: auto;
     font-size: 16px;
   }

@@ -24,7 +24,7 @@ const isOpen = ref(false)
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  gap: 1px;
+  gap: 10px;
 }
 
 .answerwrapper-enter-active,

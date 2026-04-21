@@ -74,6 +74,8 @@ const toggle = (index: number) => {
 
 .questionlist {
   width: 100%;
+  margin-top: 22px;
+  margin-bottom: 14px;
 }
 
 .question {

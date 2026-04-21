@@ -7,7 +7,7 @@
         <img src="~/assets/img/mechanic 1.png" alt="technician" class="img" />
       </div>
       <div class="text-wrapper">
-        <Heading tag="h1">О компании</Heading>
+        <Heading tag="h1" class="about-heading">О компании</Heading>
         <p>
           Лидер в сфере тюнинга и обслуживания автомобилей. На сегодняшний день
           компания обладает множеством международных достижений в области
@@ -34,11 +34,13 @@
 
 <style scoped>
 .container {
+  margin-top: 96px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.1) 0%,
     rgba(255, 255, 255, 0.1) 100%
   );
+  padding-inline: 26px 24px;
   @media screen and (min-width: 900px) {
     background: initial;
   }
@@ -49,7 +51,7 @@
   --about-top-offset: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 24px;
   padding: var(--about-padding);
   overflow: hidden;
   @media screen and (min-width: 900px) {
@@ -75,11 +77,15 @@
   }
 }
 
+.about-heading {
+  font-size: 32px;
+}
+
 .text-wrapper {
   padding-block: 30px 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20.5px;
   @media screen and (min-width: 900px) {
     padding-block: initial;
   }
@@ -95,6 +101,7 @@
   max-width: 400px;
   grid-row: 2 / 3;
   margin-inline: auto;
+  display: flex;
 
   @media screen and (min-width: 900px) {
     transform: translateY(var(--about-padding));

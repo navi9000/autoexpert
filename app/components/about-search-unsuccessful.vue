@@ -19,15 +19,25 @@
   flex-direction: column;
   overflow: hidden;
   gap: 50px;
+  overflow: hidden;
+  padding-bottom: 16px;
   @media screen and (min-width: 900px) {
     display: block;
     flex-direction: unset;
     gap: unset;
+    padding-bottom: initial;
   }
 }
 .bg {
   order: 2;
+  height: 230px;
+  object-fit: cover;
+  object-position: left 0 top 50%;
+  transform: translateX(12px);
   @media screen and (min-width: 900px) {
+    object-fit: unset;
+    object-position: unset;
+    transform: unset;
     order: unset;
     float: right;
     clear: right;
