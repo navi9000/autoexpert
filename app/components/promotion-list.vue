@@ -32,7 +32,10 @@ const swiper = useSwiper(swiperRef)
         <p class="subheader">Все лучшее для наших клиентов</p>
       </div>
     </Container>
-    <Container v-if="isLargeScreen !== null && !isLargeScreen">
+    <Container
+      v-if="isLargeScreen !== null && !isLargeScreen"
+      class="mobile-container"
+    >
       <PromotionCard
         v-for="item in list"
         :title="item.title"
@@ -58,6 +61,18 @@ const swiper = useSwiper(swiperRef)
         />
       </swiper-slide>
     </swiper-container>
+    <img
+      v-if="isLargeScreen !== null && !isLargeScreen"
+      src="/img/background-circle.svg"
+      alt="background"
+      class="circles"
+    />
+    <img
+      v-else-if="isLargeScreen"
+      src="/img/background-circle-lg.svg"
+      alt="background"
+      class="circles"
+    />
   </section>
 </template>
 
@@ -66,7 +81,9 @@ const swiper = useSwiper(swiperRef)
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding-block: 40px;
+  padding-block: 129px 40px;
+  position: relative;
+  overflow: hidden;
   @media screen and (min-width: 900px) {
     gap: 70px;
   }
@@ -75,7 +92,7 @@ const swiper = useSwiper(swiperRef)
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   @media screen and (min-width: 900px) {
     gap: 30px;
   }
@@ -88,5 +105,19 @@ const swiper = useSwiper(swiperRef)
   @media screen and (min-width: 900px) {
     font-size: 24px;
   }
+}
+
+.mobile-container > * {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
 }
 </style>

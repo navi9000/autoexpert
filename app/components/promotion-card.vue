@@ -62,6 +62,10 @@ defineProps<Props>()
   margin-top: auto;
 }
 
+.promo-button {
+  z-index: 1;
+}
+
 .background {
   position: absolute;
   top: 0;
@@ -69,13 +73,6 @@ defineProps<Props>()
   height: 100%;
   width: 100%;
   object-fit: cover;
-  background:
-    linear-gradient(137deg, #010911 0%, rgba(5, 13, 21, 0) 100%),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0.1) 100%
-    );
-  z-index: -1;
+  mix-blend-mode: overlay;
 }
 </style>
