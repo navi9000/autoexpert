@@ -34,7 +34,7 @@ defineProps<Props>()
   gap: 20px;
 
   @media screen and (min-width: 990px) {
-    max-width: 638px;
+    min-height: 390px;
   }
 }
 

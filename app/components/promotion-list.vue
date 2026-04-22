@@ -46,7 +46,7 @@ const swiper = useSwiper(swiperRef)
     <swiper-container
       v-else-if="isLargeScreen"
       :slides-per-view="3"
-      :space-between="100"
+      :space-between="44"
       centered-slides
     >
       <swiper-slide
@@ -86,6 +86,7 @@ const swiper = useSwiper(swiperRef)
   overflow: hidden;
   @media screen and (min-width: 900px) {
     gap: 70px;
+    padding-block: 196px 318px;
   }
 }
 .heading-container {
@@ -94,7 +95,7 @@ const swiper = useSwiper(swiperRef)
   align-items: center;
   gap: 10px;
   @media screen and (min-width: 900px) {
-    gap: 30px;
+    gap: 20px;
   }
 }
 
