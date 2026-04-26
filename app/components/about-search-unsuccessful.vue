@@ -1,7 +1,11 @@
+<script setup lang="ts">
+const isLargeScreen = useIsLargeScreen()
+</script>
+
 <template>
   <section class="section">
-    <img src="~/assets/img/blue-car.png" alt="car" class="bg" />
-    <Container>
+    <img src="/img/blue-car.png" alt="car" class="bg" />
+    <Container v-if="isLargeScreen !== null && !isLargeScreen">
       <div class="section-inlay">
         <Heading tag="h2" class="h2">Не нашли,<br />что искали?</Heading>
         <p class="text">
@@ -11,6 +15,14 @@
         <Button filling="solid">Оставить звонок</Button>
       </div>
     </Container>
+    <div v-else-if="isLargeScreen" class="container-large">
+      <Heading tag="h2" class="h2">Не нашли,<br />что искали?</Heading>
+      <p class="text">
+        Оставьте заявку. Мы обязательно свяжемся с вами в ближайшее время и
+        решим все вопросы
+      </p>
+      <Button filling="solid">Оставить звонок</Button>
+    </div>
   </section>
 </template>
 <style scoped>
@@ -43,8 +55,8 @@
     clear: right;
     width: calc(100% - 440px);
     height: auto;
-    shape-outside: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-    shape-margin: 0;
+    shape-outside: url("/img/blue-car.png");
+    shape-margin: 70px;
   }
 }
 
@@ -72,10 +84,27 @@
     text-align: initial;
   }
 }
+
 .text {
   font-size: 16px;
   font-weight: 600;
   color: var(--color-white);
   max-width: 240px;
+
+  @media screen and (min-width: 900px) {
+    max-width: unset;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.h2 {
+  @media screen and (min-width: 900px) {
+    margin-bottom: 10px;
+  }
+}
+
+.container-large {
+  padding-left: 100px;
 }
 </style>

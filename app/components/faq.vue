@@ -60,7 +60,7 @@ const toggle = (index: number) => {
   padding-block: 20px;
   @media screen and (min-width: 900px) {
     gap: 20px;
-    padding-block: 40px;
+    padding-block: 40px 124px;
   }
 }
 .subheading {
@@ -76,6 +76,10 @@ const toggle = (index: number) => {
   width: 100%;
   margin-top: 22px;
   margin-bottom: 14px;
+  @media screen and (min-width: 900px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .question {
@@ -88,7 +92,7 @@ const toggle = (index: number) => {
   @media screen and (min-width: 900px) {
     font-size: 24px;
     line-height: 117%;
-    padding-block: 40px;
+    padding-block: 42px 50px;
   }
 }
 
