@@ -23,7 +23,10 @@ onUnmounted(() => {
 <template>
   <section
     class="container"
-    :class="{ ['container_bottom-block']: !isContactsPage }"
+    :class="{
+      ['container_bottom-block']: !isContactsPage,
+      ['container_contacts-page']: isContactsPage,
+    }"
   >
     <Heading tag="h2" v-if="!isContactsPage">{{ title }}</Heading>
     <div class="content">
@@ -68,10 +71,18 @@ onUnmounted(() => {
   background: linear-gradient(180deg, #182430 0%, rgba(24, 36, 48, 0) 100%);
 }
 
+.container_contacts-page {
+  padding: 130px 20px 20px;
+  @media screen and (min-width: 900px) {
+    padding: 160px 150px 50px;
+  }
+}
+
 .content {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
+  gap: 20px;
 
   @media screen and (min-width: 1420px) {
     grid-template-columns: 1fr 849px;
