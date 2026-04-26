@@ -41,9 +41,11 @@ const isLargeScreen = useIsLargeScreen()
       url("~/assets/img/white-car.png"), url("~/assets/img/services_bg.png");
     background-repeat: no-repeat, no-repeat;
     background-position:
-      top 50% right 0%,
+      top 72% right 12%,
       top 0% right 0%;
-    height: 100vh;
+    height: 1080px;
+    padding-block: unset;
+    padding-top: 294px;
   }
 }
 
@@ -57,6 +59,8 @@ const isLargeScreen = useIsLargeScreen()
   @media screen and (min-width: 900px) {
     height: 100vh;
     padding-block: initial;
+    justify-content: initial;
+    gap: 62px;
   }
 }
 
@@ -95,10 +99,13 @@ const isLargeScreen = useIsLargeScreen()
   color: var(--color-white);
   &::marker {
     font-size: 1.2em;
+    @media screen and (min-width: 900px) {
+      font-size: 0.7em;
+    }
   }
   @media screen and (min-width: 900px) {
     font-size: 24px;
-    line-height: 117%;
+    line-height: 142%;
   }
 }
 </style>
