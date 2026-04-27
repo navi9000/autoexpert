@@ -17,7 +17,7 @@ const isLargeScreen = useIsLargeScreen()
     </div>
     <img
       v-if="isLargeScreen !== null && !isLargeScreen"
-      src="~/assets/img/white-car.png"
+      src="/img/white-car.png"
       alt="car"
       class="car"
     />
@@ -26,7 +26,7 @@ const isLargeScreen = useIsLargeScreen()
 
 <style scoped>
 .section {
-  background-image: url("~/assets/img/services_bg.png");
+  background-image: url("/img/services_bg.png");
   background-size: 100% max-content;
   background-repeat: no-repeat;
   background-position: top 0% right 0%;
@@ -37,15 +37,14 @@ const isLargeScreen = useIsLargeScreen()
     background-size:
       60%,
       50% 100%;
-    background-image:
-      url("~/assets/img/white-car.png"), url("~/assets/img/services_bg.png");
+    background-image: url("/img/white-car.png"), url("/img/services_bg.png");
     background-repeat: no-repeat, no-repeat;
     background-position:
       top 72% right 12%,
       top 0% right 0%;
-    height: 1080px;
+    height: 100vh;
     padding-block: unset;
-    padding-top: 294px;
+    padding-top: 0;
   }
 }
 
@@ -59,8 +58,8 @@ const isLargeScreen = useIsLargeScreen()
   @media screen and (min-width: 900px) {
     height: 100vh;
     padding-block: initial;
-    justify-content: initial;
     gap: 62px;
+    max-width: 36%;
   }
 }
 
