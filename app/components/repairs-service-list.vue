@@ -78,7 +78,7 @@ const toggle = (index: number) => {
         </template>
         <template #icon>
           <img
-            src="~/assets/img/plus.svg"
+            src="/img/plus.svg"
             alt="plus"
             class="img"
             :class="isOpen[index] ? 'img_rotate' : ''"
@@ -162,9 +162,10 @@ const toggle = (index: number) => {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  @media screen and (min-width: 1420px) {
+  gap: 20px;
+  @media screen and (min-width: 1440px) {
     grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
   }
 }
 </style>

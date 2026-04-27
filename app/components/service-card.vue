@@ -10,9 +10,12 @@ const props = defineProps<Props>()
 
 <template>
   <article class="article">
-    <h3 class="title">{{ title }}</h3>
-    <p class="description">{{ description }}</p>
+    <div class="ghost-float"></div>
     <img :src="imgSrc" alt="photo" class="img" />
+    <div class="article-inlay">
+      <h3 class="title">{{ title }}</h3>
+      <p class="description">{{ description }}</p>
+    </div>
   </article>
 </template>
 
@@ -20,11 +23,11 @@ const props = defineProps<Props>()
 .article {
   position: relative;
   background: linear-gradient(180deg, #222930 0%, #0d151d 100%);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
   height: 400px;
+}
+
+.article-inlay {
+  padding: 40px;
 }
 
 .title {
@@ -38,11 +41,19 @@ const props = defineProps<Props>()
   font-size: 16px;
   line-height: 131%;
   color: #fff;
+  margin-block: 24px;
+}
+
+.ghost-float {
+  width: 0;
+  height: 188px;
+  float: right;
 }
 
 .img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  shape-outside: url("/img/services-1.png");
+  float: right;
+  height: 212px;
+  clear: both;
 }
 </style>

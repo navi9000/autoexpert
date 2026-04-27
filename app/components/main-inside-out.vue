@@ -14,7 +14,7 @@
         </template>
         <template #icon>
           <img
-            src="~/assets/img/plus.svg"
+            src="/img/plus.svg"
             alt="plus"
             class="img"
             :class="isOpen[index] ? 'img_rotate' : ''"
