@@ -60,7 +60,7 @@ const toggle = (index: number) => {
   padding-block: 20px;
   @media screen and (min-width: 900px) {
     gap: 20px;
-    padding-block: 40px 124px;
+    padding-block: 40px 72px;
   }
 }
 .subheading {

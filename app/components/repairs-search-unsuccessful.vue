@@ -11,6 +11,7 @@
       </div>
       <img src="/img/technicians.png" alt="technicians" class="img" />
     </div>
+    <img src="/img/repairs_circle.svg" alt="bg" class="circle" />
   </Container>
 </template>
 
@@ -18,6 +19,18 @@
 .section {
   overflow: hidden;
   padding-top: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  position: relative;
+  @media screen and (min-width: 900px) {
+    padding-top: 0;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-inline: 236px;
+  }
 }
 .section-inlay {
   display: flex;
@@ -45,6 +58,10 @@
   @media screen and (min-width: 900px) {
     margin-block: auto;
     align-items: initial;
+
+    button {
+      width: max-content;
+    }
   }
 }
 
@@ -64,5 +81,12 @@
   @media screen and (min-width: 1420px) {
     max-height: 785px;
   }
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
 }
 </style>
