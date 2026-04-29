@@ -4,7 +4,7 @@ const isLargeScreen = useIsLargeScreen()
 
 <template>
   <section class="section">
-    <img src="/img/blue-car.png" alt="car" class="bg" />
+    <img src="/img/blue-car.webp" alt="car" class="bg" />
     <Container v-if="isLargeScreen !== null && !isLargeScreen">
       <div class="section-inlay">
         <Heading tag="h2" class="h2">Не нашли,<br />что искали?</Heading>
@@ -55,7 +55,7 @@ const isLargeScreen = useIsLargeScreen()
     clear: right;
     width: calc(100% - 440px);
     height: auto;
-    shape-outside: url("/img/blue-car.png");
+    shape-outside: url("/img/blue-car.webp");
     shape-margin: 70px;
   }
 }

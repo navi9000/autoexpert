@@ -6,15 +6,15 @@ const list = [
     title: "Вызов эвакуатора",
     description:
       "Организуем подачу эвакуатора.Сумма эвакуации фиксированная для автомобилей до 2,5 тонны",
-    img: "/img/promotion-1.png",
+    img: "/img/promotion-1.webp",
   },
   {
     title: "Диагностика ходовой части автомобиля — бесплатно!",
-    img: "/img/promotion-2.png",
+    img: "/img/promotion-2.webp",
   },
   {
     title: "Замена масла и масляного фильтра — в подарок!",
-    img: "/img/promotion-3.png",
+    img: "/img/promotion-3.webp",
   },
 ]
 

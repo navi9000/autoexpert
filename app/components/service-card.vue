@@ -51,7 +51,7 @@ const props = defineProps<Props>()
 }
 
 .img {
-  shape-outside: url("/img/services-1.png");
+  shape-outside: url("/img/services-1.webp");
   float: right;
   height: 212px;
   clear: both;

@@ -4,7 +4,7 @@
   <Container tag="section">
     <div class="about-inlay">
       <div class="img-container">
-        <img src="~/assets/img/mechanic 1.png" alt="technician" class="img" />
+        <img src="/img/mechanic 1.webp" alt="technician" class="img" />
       </div>
       <div class="text-wrapper">
         <Heading tag="h1" class="about-heading">О компании</Heading>

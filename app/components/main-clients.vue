@@ -13,6 +13,7 @@ const list = [
     description: "40 760€",
   },
 ]
+const isLargeScreen = useIsLargeScreen()
 </script>
 
 <template>
@@ -21,46 +22,58 @@ const list = [
       <Heading tag="h2" class="heading"
         >Реальные истории наших клиентов</Heading
       >
-      <div class="card">
-        <img src="/img/clients_car.png" alt="car" class="img" />
-        <div class="content">
-          <div class="top-section">
-            <div class="location-container">
-              <img src="/img/map-marker.svg" alt="pointer" class="pointer" />
-              <span class="location">Лимассол</span>
+      <div class="card-wrapper">
+        <div class="card">
+          <img src="/img/clients_car.webp" alt="car" class="img" />
+          <div class="content">
+            <div class="top-section">
+              <div class="location-container">
+                <img src="/img/map-marker.svg" alt="pointer" class="pointer" />
+                <span class="location">Лимассол</span>
+              </div>
+              <div class="pagination-container"></div>
             </div>
-            <div class="pagination-container"></div>
-          </div>
-          <h3 class="h3">Проверили Lexus NX 200t в редком синем цвете</h3>
-          <p class="line">
-            В рамках услуги “Подбор автомобиля под ключ” в Лимассоле был
-            осмотрен автомобиль Lexus LX 570
-          </p>
-          <div class="result-container">
-            <h4 class="h4">Результат</h4>
-            <p class="line">
-              Данный автомобиль мы рекомендовали к покупке, так как был сделан
-              рестайлинг с 12 года. Видно, что машину обслуживали. Красивый и
-              редкий синий цвет.
-            </p>
-          </div>
-          <div class="list-container">
-            <div v-for="item in list" class="list-item">
-              <p class="item-title">{{ item.title }}</p>
-              <p class="item-description">{{ item.description }}</p>
+            <div class="heading-container">
+              <h3 class="h3">Проверили Lexus NX 200t в редком синем цвете</h3>
+              <p class="line">
+                В рамках услуги “Подбор автомобиля под ключ” в Лимассоле был
+                осмотрен автомобиль Lexus LX 570
+              </p>
+            </div>
+
+            <div class="result-container">
+              <h4 class="h4">Результат</h4>
+              <p class="line">
+                Данный автомобиль мы рекомендовали к покупке, так как был сделан
+                рестайлинг с 12 года. Видно, что машину обслуживали. Красивый и
+                редкий синий цвет.
+              </p>
+            </div>
+            <div class="list-container">
+              <div v-for="item in list" class="list-item">
+                <p class="item-title">{{ item.title }}</p>
+                <p class="item-description">{{ item.description }}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <img
+      v-if="isLargeScreen"
+      src="/img/main-page-circle.svg"
+      alt="circle"
+      class="circle"
+    />
   </Container>
 </template>
 
 <style scoped>
 .container {
   padding-block: 20px;
+  position: relative;
   @media screen and (min-width: 900px) {
-    padding-block: 40px;
+    padding-block: 40px 70px;
   }
 }
 .inner-container {
@@ -76,6 +89,12 @@ const list = [
 
 .heading {
   text-align: center;
+}
+
+.card-wrapper {
+  @media screen and (min-width: 900px) {
+    padding-inline: 124px;
+  }
 }
 
 .card {
@@ -108,6 +127,7 @@ const list = [
   gap: 10px;
   @media screen and (min-width: 900px) {
     padding: 40px;
+    gap: 20px;
   }
 }
 
@@ -115,6 +135,14 @@ const list = [
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.heading-container {
+  @media screen and (min-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 
 .location-container {
@@ -171,6 +199,7 @@ const list = [
   color: var(--color-white);
   @media screen and (min-width: 900px) {
     font-size: 18px;
+    line-height: 135%;
   }
 }
 
@@ -179,6 +208,9 @@ const list = [
   flex-direction: column;
   gap: 10px;
   padding-block: 10px;
+  @media screen and (min-width: 900px) {
+    padding-block: 20px;
+  }
 }
 
 .h4 {
@@ -193,6 +225,7 @@ const list = [
   @media screen and (min-width: 900px) {
     flex-direction: row;
     width: 100%;
+    margin-top: 36px;
     & > * {
       flex: 1;
     }
@@ -232,5 +265,12 @@ const list = [
 
 .list-item:not(:nth-of-type(2)) .item-description {
   font-size: 24px;
+}
+
+.circle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 </style>

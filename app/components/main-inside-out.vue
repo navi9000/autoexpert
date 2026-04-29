@@ -27,7 +27,7 @@
       </Accordion>
     </div>
     <div v-else-if="isLargeScreen" class="list-container">
-      <img src="/img/car_inside_out.png" alt="car" class="car" />
+      <img src="/img/car_inside_out.webp" alt="car" class="car" />
       <div>
         <div
           v-for="(item, index) in list.slice(0, 6)"

@@ -9,7 +9,7 @@
         </p>
         <Button filling="solid">Оставить звонок</Button>
       </div>
-      <img src="/img/technicians.png" alt="technicians" class="img" />
+      <img src="/img/technicians.webp" alt="technicians" class="img" />
     </div>
     <img src="/img/repairs_circle.svg" alt="bg" class="circle" />
   </Container>
