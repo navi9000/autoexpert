@@ -11,7 +11,7 @@ const { title, description } = defineProps<Props>()
   <article class="card">
     <h3 class="title">{{ title }}</h3>
     <p class="description">{{ description }}</p>
-    <Button filling="solid">Подробнее</Button>
+    <Button filling="solid" class="card-button">Подробнее</Button>
   </article>
 </template>
 
@@ -38,6 +38,7 @@ const { title, description } = defineProps<Props>()
     height: 100%;
     align-items: flex-start;
     padding: 212px 40px 40px;
+    gap: 38px;
   }
 }
 
@@ -49,6 +50,7 @@ const { title, description } = defineProps<Props>()
 
   @media screen and (min-width: 900px) {
     text-align: initial;
+    font-size: 32px;
   }
 }
 
@@ -60,6 +62,14 @@ const { title, description } = defineProps<Props>()
   text-align: center;
   @media screen and (min-width: 900px) {
     text-align: initial;
+    font-size: 18px;
+    line-height: 119%;
+  }
+}
+
+.card-button {
+  @media screen and (min-width: 900px) {
+    margin-top: auto;
   }
 }
 </style>

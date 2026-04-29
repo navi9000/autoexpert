@@ -108,6 +108,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: 40px;
+    padding-top: 42px;
+    margin-bottom: 54px;
   }
 }
 
@@ -126,7 +128,7 @@
     border-bottom: 1px solid var(--color-white);
   }
   @media screen and (min-width: 900px) {
-    padding-block: 20px;
+    padding-block: 18px;
   }
 }
 
@@ -138,7 +140,7 @@
 
   @media screen and (min-width: 900px) {
     gap: 20px;
-    padding-inline: 150px;
+    padding-inline: 218px;
   }
 }
 
@@ -183,7 +185,7 @@
   color: var(--color-white);
   overflow: hidden;
   @media screen and (min-width: 900px) {
-    padding-inline: 150px;
+    padding-inline: 218px;
   }
 }
 
