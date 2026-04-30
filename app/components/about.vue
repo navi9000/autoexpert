@@ -63,7 +63,7 @@
       rgba(255, 255, 255, 0.1) 100%
     );
   }
-  @media screen and (min-width: 1420px) {
+  @media screen and (min-width: 1440px) {
     --about-padding: 40px 40px 0;
     --about-top-offset: 212px;
     margin-inline: 74px;
@@ -93,7 +93,7 @@
   @media screen and (min-width: 900px) {
     padding-block: initial;
   }
-  @media screen and (min-width: 1420px) {
+  @media screen and (min-width: 1440px) {
     padding-block: var(--about-top-offset) 0;
     gap: 25.5px;
   }
@@ -108,7 +108,7 @@
   margin-inline: auto;
   display: flex;
 
-  @media screen and (min-width: 1420px) {
+  @media screen and (min-width: 1440px) {
     width: 100%;
     grid-row: 1 / 2;
     max-width: unset;

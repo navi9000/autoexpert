@@ -78,7 +78,7 @@
   @media screen and (min-width: 900px) {
     max-height: 480px;
   }
-  @media screen and (min-width: 1420px) {
+  @media screen and (min-width: 1440px) {
     max-height: 785px;
   }
 }

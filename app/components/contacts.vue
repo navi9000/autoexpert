@@ -84,7 +84,7 @@ onUnmounted(() => {
   grid-template-columns: 1fr;
   gap: 20px;
 
-  @media screen and (min-width: 1420px) {
+  @media screen and (min-width: 1440px) {
     grid-template-columns: 1fr 849px;
   }
 }

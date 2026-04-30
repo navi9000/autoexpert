@@ -67,6 +67,12 @@ const isLargeScreen = useIsLargeScreen()
   max-height: 256px;
   object-fit: contain;
   transform: translateX(-30px);
+  @media screen and (min-width: 500px) {
+    transform: unset;
+    object-position: top 0 right 0;
+    margin-left: auto;
+    display: block;
+  }
 }
 
 .heading {
@@ -77,8 +83,11 @@ const isLargeScreen = useIsLargeScreen()
   max-width: 7em;
   color: var(--color-white);
   @media screen and (min-width: 900px) {
-    font-size: 72px;
+    font-size: 44px;
     line-height: 106%;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 72px;
   }
 }
 .heading span {
@@ -99,12 +108,18 @@ const isLargeScreen = useIsLargeScreen()
   &::marker {
     font-size: 1.2em;
     @media screen and (min-width: 900px) {
+      font-size: 0.8em;
+    }
+    @media screen and (min-width: 1440px) {
       font-size: 0.7em;
     }
   }
   @media screen and (min-width: 900px) {
+    font-size: 18px;
+    line-height: 117%;
+  }
+  @media screen and (min-width: 1440px) {
     font-size: 24px;
-    line-height: 142%;
   }
 }
 </style>

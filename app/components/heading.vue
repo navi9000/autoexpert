@@ -23,7 +23,7 @@ const { tag = "div", centered = false } = defineProps<Props>()
     font-size: 32px;
   }
 
-  @media screen and (min-width: 1420px) {
+  @media screen and (min-width: 1440px) {
     font-size: 48px;
   }
 }

@@ -19,7 +19,10 @@ const { tag = "div" } = defineProps<Props>()
   max-width: 100%;
   display: flex;
   padding-inline: 20px;
-  @media screen and (min-width: 990px) {
+  @media screen and (min-width: 900px) {
+    padding-inline: 40px;
+  }
+  @media screen and (min-width: 1440px) {
     padding-inline: 100px;
   }
 }

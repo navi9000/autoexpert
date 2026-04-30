@@ -297,5 +297,5 @@ const toggleOnLargeScreen = (index: number) => {
   )
 }
 
-const isLargeScreen = useIsLargeScreen()
+const isLargeScreen = useIsLargeScreen(1440)
 </script>
