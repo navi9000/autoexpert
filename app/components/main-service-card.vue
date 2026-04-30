@@ -37,7 +37,16 @@ const { title, description } = defineProps<Props>()
     aspect-ratio: 1;
     height: 100%;
     align-items: flex-start;
-    padding: 212px 40px 40px;
+    gap: 18px;
+  }
+
+  /* @media screen and (min-width: 1024px) {
+    padding: 60px 20px 20px;
+  } */
+
+  @media screen and (min-width: 1640px) {
+    align-items: flex-start;
+    padding: clamp(1px, 40%, 212px) 40px 40px;
     gap: 38px;
   }
 }
@@ -50,6 +59,13 @@ const { title, description } = defineProps<Props>()
 
   @media screen and (min-width: 900px) {
     text-align: initial;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 28px;
+  }
+
+  @media screen and (min-width: 1440px) {
     font-size: 32px;
   }
 }
@@ -62,13 +78,18 @@ const { title, description } = defineProps<Props>()
   text-align: center;
   @media screen and (min-width: 900px) {
     text-align: initial;
-    font-size: 18px;
     line-height: 119%;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
   }
 }
 
 .card-button {
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     margin-top: auto;
   }
 }
