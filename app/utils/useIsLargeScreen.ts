@@ -1,9 +1,7 @@
 import { ref, onMounted, onUnmounted } from "vue"
 
 export default function useIsLargeScreen(breakpoint = 900) {
-  const result = ref(
-    window?.innerWidth ? window.innerWidth >= breakpoint : null,
-  )
+  const result = ref<boolean | null>(null)
 
   const handleResize = () => {
     result.value = window.innerWidth >= breakpoint
@@ -11,6 +9,7 @@ export default function useIsLargeScreen(breakpoint = 900) {
 
   onMounted(() => {
     window.addEventListener("resize", handleResize)
+    handleResize()
   })
 
   onUnmounted(() => {

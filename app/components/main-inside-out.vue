@@ -73,7 +73,7 @@
   background: linear-gradient(180deg, #182430 0%, rgba(24, 36, 48, 0) 100%);
   padding-block: 20px;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     padding-block: 40px 80px;
   }
 }
@@ -83,7 +83,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     gap: 20px;
   }
 
@@ -96,14 +96,14 @@
   font-weight: 700;
   font-size: 16px;
   color: var(--color-white);
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     font-size: 24px;
   }
 }
 
 .list-container {
   margin-top: 10px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -127,7 +127,7 @@
   &:not(:last-of-type) {
     border-bottom: 1px solid var(--color-white);
   }
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     padding-block: 18px;
   }
 }
@@ -138,9 +138,9 @@
   gap: 10px;
   margin-right: 10px;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     gap: 20px;
-    padding-inline: 218px;
+    padding-inline: clamp(1px, 25%, 218px);
   }
 }
 
@@ -149,7 +149,7 @@
   font-size: 16px;
   color: var(--color-theme);
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     font-size: 22px;
   }
 }
@@ -157,7 +157,7 @@
 .icon {
   height: 40px;
   width: 40px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     height: 64px;
     width: 64px;
   }
@@ -167,7 +167,7 @@
   transition: 500ms;
   height: 20px;
   width: 20px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     height: 34px;
     width: 34px;
   }
@@ -184,8 +184,8 @@
   line-height: 136%;
   color: var(--color-white);
   overflow: hidden;
-  @media screen and (min-width: 900px) {
-    padding-inline: 218px;
+  @media screen and (min-width: 1440px) {
+    padding-inline: clamp(1px, 25%, 218px);
   }
 }
 
