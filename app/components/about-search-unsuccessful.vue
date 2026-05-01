@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const isLargeScreen = useIsLargeScreen()
+const isLargeScreen = useIsLargeScreen(1024)
 </script>
 
 <template>
@@ -33,7 +33,7 @@ const isLargeScreen = useIsLargeScreen()
   gap: 50px;
   overflow: hidden;
   padding-bottom: 16px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     display: block;
     flex-direction: unset;
     gap: unset;
@@ -43,10 +43,10 @@ const isLargeScreen = useIsLargeScreen()
 .bg {
   order: 2;
   height: 230px;
-  object-fit: cover;
-  object-position: left 0 top 50%;
+  object-fit: contain;
+  object-position: right 0 top 50%;
   transform: translateX(12px);
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     object-fit: unset;
     object-position: unset;
     transform: unset;
@@ -69,7 +69,7 @@ const isLargeScreen = useIsLargeScreen()
   max-width: 240px;
   margin-inline: auto;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     align-items: flex-start;
     justify-content: initial;
     max-width: unset;
@@ -80,7 +80,7 @@ const isLargeScreen = useIsLargeScreen()
 
 .section-inlay * {
   text-align: center;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     text-align: initial;
   }
 }
@@ -91,7 +91,7 @@ const isLargeScreen = useIsLargeScreen()
   color: var(--color-white);
   max-width: 240px;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     max-width: unset;
     font-size: 24px;
     margin-bottom: 40px;
@@ -99,12 +99,16 @@ const isLargeScreen = useIsLargeScreen()
 }
 
 .h2 {
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     margin-bottom: 10px;
   }
 }
 
 .container-large {
-  padding-left: 100px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  @media screen and (min-width: 1440px) {
+    padding-left: 100px;
+  }
 }
 </style>
