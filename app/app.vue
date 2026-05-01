@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { m } from "vue-router/dist/index-DFCq6eJK.js"
-
 const nav = [
   {
     label: "Подбор авто",
