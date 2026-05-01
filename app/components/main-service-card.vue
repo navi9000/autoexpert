@@ -40,10 +40,6 @@ const { title, description } = defineProps<Props>()
     gap: 18px;
   }
 
-  /* @media screen and (min-width: 1024px) {
-    padding: 60px 20px 20px;
-  } */
-
   @media screen and (min-width: 1640px) {
     align-items: flex-start;
     padding: clamp(1px, 40%, 212px) 40px 40px;

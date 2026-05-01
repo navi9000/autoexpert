@@ -13,7 +13,6 @@ const list = [
     description: "40 760€",
   },
 ]
-const isLargeScreen = useIsLargeScreen()
 </script>
 
 <template>
@@ -22,49 +21,43 @@ const isLargeScreen = useIsLargeScreen()
       <Heading tag="h2" class="heading"
         >Реальные истории наших клиентов</Heading
       >
-      <div class="card-wrapper">
-        <div class="card">
-          <img src="/img/clients_car.webp" alt="car" class="img" />
-          <div class="content">
-            <div class="top-section">
-              <div class="location-container">
-                <img src="/img/map-marker.svg" alt="pointer" class="pointer" />
-                <span class="location">Лимассол</span>
-              </div>
-              <div class="pagination-container"></div>
-            </div>
-            <div class="heading-container">
-              <h3 class="h3">Проверили Lexus NX 200t в редком синем цвете</h3>
-              <p class="line">
-                В рамках услуги “Подбор автомобиля под ключ” в Лимассоле был
-                осмотрен автомобиль Lexus LX 570
-              </p>
-            </div>
 
-            <div class="result-container">
-              <h4 class="h4">Результат</h4>
-              <p class="line">
-                Данный автомобиль мы рекомендовали к покупке, так как был сделан
-                рестайлинг с 12 года. Видно, что машину обслуживали. Красивый и
-                редкий синий цвет.
-              </p>
+      <div class="card">
+        <img src="/img/clients_car.webp" alt="car" class="img" />
+        <div class="content">
+          <div class="top-section">
+            <div class="location-container">
+              <img src="/img/map-marker.svg" alt="pointer" class="pointer" />
+              <span class="location">Лимассол</span>
             </div>
-            <div class="list-container">
-              <div v-for="item in list" class="list-item">
-                <p class="item-title">{{ item.title }}</p>
-                <p class="item-description">{{ item.description }}</p>
-              </div>
+            <div class="pagination-container"></div>
+          </div>
+          <div class="heading-container">
+            <h3 class="h3">Проверили Lexus NX 200t в редком синем цвете</h3>
+            <p class="line">
+              В рамках услуги “Подбор автомобиля под ключ” в Лимассоле был
+              осмотрен автомобиль Lexus LX 570
+            </p>
+          </div>
+
+          <div class="result-container">
+            <h4 class="h4">Результат</h4>
+            <p class="line">
+              Данный автомобиль мы рекомендовали к покупке, так как был сделан
+              рестайлинг с 12 года. Видно, что машину обслуживали. Красивый и
+              редкий синий цвет.
+            </p>
+          </div>
+          <div class="list-container">
+            <div v-for="item in list" class="list-item">
+              <p class="item-title">{{ item.title }}</p>
+              <p class="item-description">{{ item.description }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <img
-      v-if="isLargeScreen"
-      src="/img/main-page-circle.svg"
-      alt="circle"
-      class="circle"
-    />
+    <img src="/img/main-page-circle.svg" alt="circle" class="circle" />
   </Container>
 </template>
 
@@ -72,7 +65,7 @@ const isLargeScreen = useIsLargeScreen()
 .container {
   padding-block: 20px;
   position: relative;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     padding-block: 40px 70px;
   }
 }
@@ -82,19 +75,13 @@ const isLargeScreen = useIsLargeScreen()
   align-items: center;
   gap: 30px;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     gap: 40px;
   }
 }
 
 .heading {
   text-align: center;
-}
-
-.card-wrapper {
-  @media screen and (min-width: 900px) {
-    padding-inline: 124px;
-  }
 }
 
 .card {
@@ -104,8 +91,10 @@ const isLargeScreen = useIsLargeScreen()
   display: grid;
   grid-template-columns: 1fr;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1440px) {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 1472px;
+    width: 100%;
   }
 }
 
@@ -114,7 +103,11 @@ const isLargeScreen = useIsLargeScreen()
   width: 100%;
   object-fit: cover;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 768px) {
+    height: 420px;
+  }
+
+  @media screen and (min-width: 1440px) {
     height: inherit;
   }
 }
@@ -125,9 +118,12 @@ const isLargeScreen = useIsLargeScreen()
   display: flex;
   flex-direction: column;
   gap: 10px;
-  @media screen and (min-width: 900px) {
-    padding: 40px;
+  @media screen and (min-width: 1024px) {
+    padding: 30px;
     gap: 20px;
+  }
+  @media screen and (min-width: 1660px) {
+    padding: 40px;
   }
 }
 
@@ -138,7 +134,7 @@ const isLargeScreen = useIsLargeScreen()
 }
 
 .heading-container {
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -167,7 +163,7 @@ const isLargeScreen = useIsLargeScreen()
 .pointer {
   width: 20px;
   height: 20px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     width: 24px;
     height: 24px;
   }
@@ -178,7 +174,7 @@ const isLargeScreen = useIsLargeScreen()
   font-size: 14px;
   line-height: 143%;
   color: var(--color-theme);
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     font-size: 16px;
     line-height: 125%;
   }
@@ -187,7 +183,10 @@ const isLargeScreen = useIsLargeScreen()
 .h3 {
   font-size: 24px;
   color: var(--color-white);
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1660px) {
     font-size: 32px;
   }
 }
@@ -197,7 +196,7 @@ const isLargeScreen = useIsLargeScreen()
   font-size: 14px;
   line-height: 150%;
   color: var(--color-white);
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     font-size: 18px;
     line-height: 135%;
   }
@@ -208,7 +207,10 @@ const isLargeScreen = useIsLargeScreen()
   flex-direction: column;
   gap: 10px;
   padding-block: 10px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
+    padding-block: 0;
+  }
+  @media screen and (min-width: 1660px) {
     padding-block: 20px;
   }
 }
@@ -222,13 +224,16 @@ const isLargeScreen = useIsLargeScreen()
   display: flex;
   flex-direction: column;
   gap: 18px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
     width: 100%;
-    margin-top: 36px;
+    margin-top: 10px;
     & > * {
       flex: 1;
     }
+  }
+  @media screen and (min-width: 1660px) {
+    margin-top: 36px;
   }
 }
 
@@ -241,7 +246,7 @@ const isLargeScreen = useIsLargeScreen()
   align-items: center;
   gap: 10px;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     justify-content: center;
     width: 100%;
     height: 125px;
