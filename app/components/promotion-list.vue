@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const isLargeScreen = useIsLargeScreen()
+const isLargeScreen = useIsLargeScreen(1024)
 
 const list = [
   {
@@ -84,7 +84,7 @@ const swiper = useSwiper(swiperRef)
   padding-block: 129px 40px;
   position: relative;
   overflow: hidden;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     gap: 70px;
     padding-block: 196px 318px;
   }
@@ -94,7 +94,7 @@ const swiper = useSwiper(swiperRef)
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     gap: 20px;
   }
 }
@@ -103,7 +103,7 @@ const swiper = useSwiper(swiperRef)
   font-weight: 700;
   font-size: 16px;
   color: var(--color-white);
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1024px) {
     font-size: 24px;
   }
 }
