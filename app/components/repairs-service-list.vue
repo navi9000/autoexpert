@@ -1,59 +1,60 @@
 <script setup lang="ts">
 const isLargeScreen = useIsLargeScreen()
+const assetPath = useAssetPath()
 
 const list = [
   {
     title: "Обслуживание и ремонт двигателя",
     description:
       "Ремонт двигателя и комплектующих. Обслуживание навесного оборудования и систем а/с",
-    img: "/img/services-1.webp",
+    img: assetPath("/img/services-1.webp"),
   },
   {
     title: "Обслуживание трансмиссии",
     description:
       "Диагностика, ремонт и замена любых коробок передач и систем полного привода",
-    img: "/img/services-2.webp",
+    img: assetPath("/img/services-2.webp"),
   },
   {
     title: "Работы с подвеской",
     description:
       "Диагностика, ремонт и настройка подвески. Регулировка углов установки колес",
-    img: "/img/services-3.webp",
+    img: assetPath("/img/services-3.webp"),
   },
   {
     title: "Детейлинг",
     description: "Комплекс специализированных процедур по уходу за автомобилем",
-    img: "/img/services-4.webp",
+    img: assetPath("/img/services-4.webp"),
   },
   {
     title: "Компьютерная диагностика",
     description:
       "Показывает 90% неисправностей двигателя, коробки передач и бортовой электросети",
-    img: "/img/services-5.webp",
+    img: assetPath("/img/services-5.webp"),
   },
   {
     title: "Кузовной ремонт",
     description:
       "Восстановление целостности кузовных элементов, замена отдельных кузовных деталей, покраска автомобиля",
-    img: "/img/services-6.webp",
+    img: assetPath("/img/services-6.webp"),
   },
   {
     title: "Малярные работы",
     description:
       "Даже маленькая царапина, которая пробила слой лака, губительна для любой детали кузова автомобиля",
-    img: "/img/services-7.webp",
+    img: assetPath("/img/services-7.webp"),
   },
   {
     title: "Тормозная система",
     description:
       "Полностью доверять своему автомобилю можно лишь тогда, когда в исправности его тормозной системы нет сомнений",
-    img: "/img/services-8.webp",
+    img: assetPath("/img/services-8.webp"),
   },
   {
     title: "Техобслуживание автомобиля",
     description:
       "Техническое обслуживание автомобиля является неотъемлемой частью эксплуатации",
-    img: "/img/services-9.webp",
+    img: assetPath("/img/services-9.webp"),
   },
 ]
 
@@ -78,7 +79,7 @@ const toggle = (index: number) => {
         </template>
         <template #icon>
           <img
-            src="/img/plus.svg"
+            :src="assetPath('/img/plus.svg')"
             alt="plus"
             class="img"
             :class="isOpen[index] ? 'img_rotate' : ''"

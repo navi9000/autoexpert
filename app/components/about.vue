@@ -1,10 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const assetPath = useAssetPath()
+</script>
 
 <template>
   <Container tag="section">
     <div class="about-inlay">
       <div class="img-container">
-        <img src="/img/mechanic 1.webp" alt="technician" class="img" />
+        <img :src="assetPath('/img/mechanic 1.webp')" alt="technician" class="img" />
       </div>
       <div class="text-wrapper">
         <Heading tag="h1" class="about-heading">О компании</Heading>

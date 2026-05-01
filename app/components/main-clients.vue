@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const assetPath = useAssetPath()
+
 const list = [
   {
     title: "Сэкономили",
@@ -23,11 +25,11 @@ const list = [
       >
 
       <div class="card">
-        <img src="/img/clients_car.webp" alt="car" class="img" />
+        <img :src="assetPath('/img/clients_car.webp')" alt="car" class="img" />
         <div class="content">
           <div class="top-section">
             <div class="location-container">
-              <img src="/img/map-marker.svg" alt="pointer" class="pointer" />
+              <img :src="assetPath('/img/map-marker.svg')" alt="pointer" class="pointer" />
               <span class="location">Лимассол</span>
             </div>
             <div class="pagination-container"></div>
@@ -57,7 +59,7 @@ const list = [
         </div>
       </div>
     </div>
-    <img src="/img/main-page-circle.svg" alt="circle" class="circle" />
+    <img :src="assetPath('/img/main-page-circle.svg')" alt="circle" class="circle" />
   </Container>
 </template>
 

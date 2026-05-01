@@ -1,11 +1,17 @@
 <script setup lang="ts">
 const isLargeScreen = useIsLargeScreen()
+const assetPath = useAssetPath()
+
+const sectionBackground = {
+  "--main-top-bg": `url("${assetPath("/img/main_top_bg.webp")}")`,
+  "--main-top-car": `url("${assetPath("/img/gray_car.webp")}")`,
+}
 
 const list = ["Техническая проверка", "Выездная проверка"]
 </script>
 
 <template>
-  <Container tag="section" class="section">
+  <Container tag="section" class="section" :style="sectionBackground">
     <div class="top-inlay">
       <h1 class="heading">
         <span>Помощь<br />при</span> покупке<br />автомобиля
@@ -20,7 +26,7 @@ const list = ["Техническая проверка", "Выездная пр�
     </div>
     <img
       v-if="isLargeScreen !== null && !isLargeScreen"
-      src="/img/gray_car.webp"
+      :src="assetPath('/img/gray_car.webp')"
       alt="car"
       class="car"
     />
@@ -29,7 +35,7 @@ const list = ["Техническая проверка", "Выездная пр�
 
 <style scoped>
 .section {
-  background-image: url("/img/main_top_bg.webp");
+  background-image: var(--main-top-bg);
   background-size: 100% max-content;
   background-repeat: no-repeat;
   background-position: top 0% right 0%;
@@ -40,7 +46,7 @@ const list = ["Техническая проверка", "Выездная пр�
     background-size:
       60%,
       50% 100%;
-    background-image: url("/img/gray_car.webp"), url("/img/main_top_bg.webp");
+    background-image: var(--main-top-car), var(--main-top-bg);
     background-repeat: no-repeat, no-repeat;
     background-position:
       top 50% right 0%,

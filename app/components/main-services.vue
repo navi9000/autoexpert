@@ -18,17 +18,17 @@
         :title="list[0]!.title"
         :description="list[0]!.description"
       />
-      <img src="/img/main_services_1.webp" alt="services" class="img" />
+      <img :src="assetPath('/img/main_services_1.webp')" alt="services" class="img" />
       <MainServiceCard
         :title="list[1]!.title"
         :description="list[1]!.description"
       />
-      <img src="/img/main_services_2.webp" alt="services" class="img" />
+      <img :src="assetPath('/img/main_services_2.webp')" alt="services" class="img" />
       <MainServiceCard
         :title="list[2]!.title"
         :description="list[2]!.description"
       />
-      <img src="/img/main_services_3.webp" alt="services" class="img" />
+      <img :src="assetPath('/img/main_services_3.webp')" alt="services" class="img" />
     </div>
   </Container>
 </template>
@@ -83,6 +83,7 @@
 
 <script setup lang="ts">
 const isLargeScreen = useIsLargeScreen()
+const assetPath = useAssetPath()
 
 const list = [
   {

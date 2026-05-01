@@ -9,9 +9,9 @@
         </p>
         <Button filling="solid">Оставить звонок</Button>
       </div>
-      <img src="/img/technicians.webp" alt="technicians" class="img" />
+      <img :src="assetPath('/img/technicians.webp')" alt="technicians" class="img" />
     </div>
-    <img src="/img/repairs_circle.svg" alt="bg" class="circle" />
+    <img :src="assetPath('/img/repairs_circle.svg')" alt="bg" class="circle" />
   </Container>
 </template>
 
@@ -90,3 +90,7 @@
   z-index: -1;
 }
 </style>
+
+<script setup lang="ts">
+const assetPath = useAssetPath()
+</script>

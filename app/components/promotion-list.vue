@@ -1,20 +1,21 @@
 <script setup lang="ts">
 const isLargeScreen = useIsLargeScreen(1024)
+const assetPath = useAssetPath()
 
 const list = [
   {
     title: "Вызов эвакуатора",
     description:
       "Организуем подачу эвакуатора.Сумма эвакуации фиксированная для автомобилей до 2,5 тонны",
-    img: "/img/promotion-1.webp",
+    img: assetPath("/img/promotion-1.webp"),
   },
   {
     title: "Диагностика ходовой части автомобиля — бесплатно!",
-    img: "/img/promotion-2.webp",
+    img: assetPath("/img/promotion-2.webp"),
   },
   {
     title: "Замена масла и масляного фильтра — в подарок!",
-    img: "/img/promotion-3.webp",
+    img: assetPath("/img/promotion-3.webp"),
   },
 ]
 
@@ -63,13 +64,13 @@ const swiper = useSwiper(swiperRef)
     </swiper-container>
     <img
       v-if="isLargeScreen !== null && !isLargeScreen"
-      src="/img/background-circle.svg"
+      :src="assetPath('/img/background-circle.svg')"
       alt="background"
       class="circles"
     />
     <img
       v-else-if="isLargeScreen"
-      src="/img/background-circle-lg.svg"
+      :src="assetPath('/img/background-circle-lg.svg')"
       alt="background"
       class="circles"
     />

@@ -14,6 +14,7 @@ const questionList = [
   },
 ]
 const isOpen = ref([false, false, false])
+const assetPath = useAssetPath()
 
 const toggle = (index: number) => {
   isOpen.value = isOpen.value.map((value, i) => (i === index ? !value : value))
@@ -32,7 +33,7 @@ const toggle = (index: number) => {
           </template>
           <template #icon>
             <img
-              src="/img/plus.svg"
+              :src="assetPath('/img/plus.svg')"
               alt="plus"
               class="img"
               :class="isOpen[index] ? 'img_rotate' : ''"

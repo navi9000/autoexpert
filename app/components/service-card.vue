@@ -6,12 +6,16 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const shapeImage = {
+  "--service-card-img": `url("${props.imgSrc}")`,
+}
 </script>
 
 <template>
   <article class="article">
     <div class="ghost-float"></div>
-    <img :src="imgSrc" alt="photo" class="img" />
+    <img :src="imgSrc" alt="photo" class="img" :style="shapeImage" />
     <div class="article-inlay">
       <h3 class="title">{{ title }}</h3>
       <p class="description">{{ description }}</p>
@@ -51,7 +55,7 @@ const props = defineProps<Props>()
 }
 
 .img {
-  shape-outside: url("/img/services-1.webp");
+  shape-outside: var(--service-card-img);
   float: right;
   height: 212px;
   clear: both;

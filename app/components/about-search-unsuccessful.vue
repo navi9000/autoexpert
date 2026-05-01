@@ -1,10 +1,20 @@
 <script setup lang="ts">
 const isLargeScreen = useIsLargeScreen(1024)
+const assetPath = useAssetPath()
+
+const shapeImage = {
+  "--about-search-car": `url("${assetPath("/img/blue-car.webp")}")`,
+}
 </script>
 
 <template>
   <section class="section">
-    <img src="/img/blue-car.webp" alt="car" class="bg" />
+    <img
+      :src="assetPath('/img/blue-car.webp')"
+      alt="car"
+      class="bg"
+      :style="shapeImage"
+    />
     <Container v-if="isLargeScreen !== null && !isLargeScreen">
       <div class="section-inlay">
         <Heading tag="h2" class="h2">Не нашли,<br />что искали?</Heading>
@@ -55,7 +65,7 @@ const isLargeScreen = useIsLargeScreen(1024)
     clear: right;
     width: calc(100% - 440px);
     height: auto;
-    shape-outside: url("/img/blue-car.webp");
+    shape-outside: var(--about-search-car);
     shape-margin: 70px;
   }
 }

@@ -14,7 +14,7 @@
         </template>
         <template #icon>
           <img
-            src="/img/plus.svg"
+            :src="assetPath('/img/plus.svg')"
             alt="plus"
             class="img"
             :class="isOpen[index] ? 'img_rotate' : ''"
@@ -27,7 +27,7 @@
       </Accordion>
     </div>
     <div v-else-if="isLargeScreen" class="list-container">
-      <img src="/img/car_inside_out.webp" alt="car" class="car" />
+      <img :src="assetPath('/img/car_inside_out.webp')" alt="car" class="car" />
       <div>
         <div
           v-for="(item, index) in list.slice(0, 6)"
@@ -208,78 +208,80 @@
 </style>
 
 <script setup lang="ts">
+const assetPath = useAssetPath()
+
 const list = [
   {
     title: "Двигатель",
     description:
       "Важнейшая деталь вашего автомобиля, требующая особого подхода. В проверке мы используем 5 видов оборудования, чтобы узнать всё о сердце вашего автомобиля.",
-    icon: "/img/inside_out_1.svg",
+    icon: assetPath("/img/inside_out_1.svg"),
   },
   {
     title: "Кузов",
     description:
       'Самая дорогая и влияющая на безопасность деталь автомобиля. Кузов проверяется на "распил", предмет участия в ДТП, перекрасов, ремонта. Используется толщиномер и дефектоскоп металла для поиска незаводских сварных швов.',
-    icon: "/img/inside_out_2.svg",
+    icon: assetPath("/img/inside_out_2.svg"),
   },
   {
     title: "Проверка трансмиссии и сцепления",
     description:
       "В автомобилях с АКПП и вариаторах электрическая часть этих узлов проверяется диагностическим сканером, механическая часть проверяется тест-драйвом и осмотром на подъемнике.",
-    icon: "/img/inside_out_3.svg",
+    icon: assetPath("/img/inside_out_3.svg"),
   },
   {
     title: "Проверка электронных систем дианостическим сканером",
     description:
       "Проверка проводится профессиональным диагностическим сканером LAUNCH X431PRO. Проверяются все доступные узлы автомобиля, считываются ошибки, показания датчиков во время работы двигателя.",
-    icon: "/img/inside_out_4.svg",
+    icon: assetPath("/img/inside_out_4.svg"),
   },
   {
     title: "Системы безопасности",
     description:
       "Узел автомобиля, непосредственно отвечающий за вашу жизнь. Электроника систем безопасности проверяется диагностическим сканером. Пассивная безопасность проверяется в рамках проверки кузова.",
-    icon: "/img/inside_out_5.svg",
+    icon: assetPath("/img/inside_out_5.svg"),
   },
   {
     title: "Компьютерная диагностика",
     description:
       "Показывает 90% неисправностей двигателя, коробки передач и бортовой электросети",
-    icon: "/img/inside_out_6.svg",
+    icon: assetPath("/img/inside_out_6.svg"),
   },
   {
     title: "Тормозная система и ходовая часть",
     description:
       "Очень важный узел, влияющий на безопасность. Проверка выполняется на подъемнике и при тест-драйве.",
-    icon: "/img/inside_out_7.svg",
+    icon: assetPath("/img/inside_out_7.svg"),
   },
   {
     title: "Проверка салонной электроники",
     description:
       "На данном этапе проверяются - климат-контроль, подъемники стекол, лампочки, сигнал, указатели поворотов. В общем все кнопочки и переключатели, которые есть в салоне.",
-    icon: "/img/inside_out_8.svg",
+    icon: assetPath("/img/inside_out_8.svg"),
   },
   {
     title: "Проверка салона",
     description:
       "Проверяется состояние салона - сидения, обшивки, панели, багажный отсек. Существенные недостатки отмечаются в отчете.",
-    icon: "/img/inside_out_9.svg",
+    icon: assetPath("/img/inside_out_9.svg"),
   },
   {
     title: "Турбина",
     description:
       "Очень дорогостоящий в ремонте элемент. Турбина проверяется на нагнетание требуемого давления, люфты (при возможности) и на потеки ОЖ и/или масла.",
-    icon: "/img/inside_out_10.svg",
+    icon: assetPath("/img/inside_out_10.svg"),
   },
   {
     title: "Топливный насос высокого давления",
     description:
       "Для дизельных двигателей и бензиновых двигателей это важный этап проверки, т.к. ремонт топливной аппаратуры очень дорогой. Диагностическим сканером проверяется давление ТНВД и сравнивается с номинальным значением.",
-    icon: "/img/inside_out_11.svg",
+    icon: assetPath("/img/inside_out_11.svg"),
   },
   {
     title: "Тест-драйв",
     description:
       "На тест-драйве проверяются - двигатель, трансмиссия, тормозная система и рулевое управление. Проверка выполняется в различных режимах работы, чтобы выявить все возможные неисправности.",
-    icon: "/img/inside_out_12.svg",
+    icon: assetPath("/img/inside_out_12.svg"),
   },
 ]
 

@@ -6,6 +6,7 @@ interface Props {
 const { title = "Контакты" } = defineProps<Props>()
 const isContactsPage = title === "Контакты"
 const screenWidth = ref(window?.innerWidth)
+const assetPath = useAssetPath()
 
 const handleResize = () => {
   screenWidth.value = window.innerWidth
@@ -36,15 +37,15 @@ onUnmounted(() => {
         }}</Heading>
         <div class="contact-list">
           <LabeledIcon
-            icon-src="/img/marker-pin.svg"
+            :icon-src="assetPath('/img/marker-pin.svg')"
             label="First avenue, 0, city name, country name"
           />
           <LabeledIcon
-            icon-src="/img/compass.svg"
+            :icon-src="assetPath('/img/compass.svg')"
             label="Как добраться на автомобиле?"
           />
-          <LabeledIcon icon-src="/img/phone.svg" label="+000 0000 00 00" />
-          <LabeledIcon icon-src="/img/mail.svg" label="mail@mail.com" />
+          <LabeledIcon :icon-src="assetPath('/img/phone.svg')" label="+000 0000 00 00" />
+          <LabeledIcon :icon-src="assetPath('/img/mail.svg')" label="mail@mail.com" />
         </div>
         <Button filling="solid" class="contacts-button">Заказать звонок</Button>
       </div>
