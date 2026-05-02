@@ -44,13 +44,28 @@ onUnmounted(() => {
             :icon-src="assetPath('/img/compass.svg')"
             label="Как добраться на автомобиле?"
           />
-          <LabeledIcon :icon-src="assetPath('/img/phone.svg')" label="+000 0000 00 00" />
-          <LabeledIcon :icon-src="assetPath('/img/mail.svg')" label="mail@mail.com" />
+          <LabeledIcon
+            :icon-src="assetPath('/img/phone.svg')"
+            label="+000 0000 00 00"
+          />
+          <LabeledIcon
+            :icon-src="assetPath('/img/mail.svg')"
+            label="mail@mail.com"
+          />
         </div>
         <Button filling="solid" class="contacts-button">Заказать звонок</Button>
       </div>
 
-      <div v-if="screenWidth >= 1420" class="map"></div>
+      <div v-if="screenWidth >= 1420" class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13125.537202067273!2d33.02439743428457!3d34.670249115296656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e732508c6dc73d%3A0xa2000abd57ccf29f!2sFragklinou%20Rousvelt%20-%20Social%20Insurance!5e0!3m2!1sen!2sge!4v1777699123251!5m2!1sen!2sge"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
   </section>
 </template>
