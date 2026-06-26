@@ -13,12 +13,9 @@ const questionList = [
     a: "Если по какой-то причине вас не устроит качество произведенных работ, то вы можете сразу написать письмо находясь в автосервисе, и оно попадет напрямую к Директору. В зависимости от возникшей ситуации, мы с Вами примем решение, которое удовлетворит вас и нас.",
   },
 ]
-const isOpen = ref([false, false, false])
-const assetPath = useAssetPath()
 
-const toggle = (index: number) => {
-  isOpen.value = isOpen.value.map((value, i) => (i === index ? !value : value))
-}
+const assetPath = useAssetPath()
+const { isOpen, toggle } = useToggleList(questionList)
 </script>
 
 <template>
@@ -36,7 +33,7 @@ const toggle = (index: number) => {
               :src="assetPath('/img/plus.svg')"
               alt="plus"
               class="img"
-              :class="isOpen[index] ? 'img_rotate' : ''"
+              :class="isOpen(index) ? 'img_rotate' : ''"
               @click="toggle(index)"
             />
           </template>

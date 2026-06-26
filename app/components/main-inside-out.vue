@@ -17,7 +17,7 @@
             :src="assetPath('/img/plus.svg')"
             alt="plus"
             class="img"
-            :class="isOpen[index] ? 'img_rotate' : ''"
+            :class="isOpen(index) ? 'img_rotate' : ''"
             @click="toggle(index)"
           />
         </template>
@@ -40,7 +40,7 @@
             <p class="question">{{ item.title }}</p>
           </div>
           <Transition name="answerwrapper">
-            <p class="answer" v-if="isOpenOnLargeScreen[index]">
+            <p class="answer" v-if="isOpenOnLargeScreen(index)">
               {{ item.description }}
             </p>
           </Transition>
@@ -58,7 +58,7 @@
             <p class="question">{{ item.title }}</p>
           </div>
           <Transition name="answerwrapper">
-            <p class="answer" v-if="isOpenOnLargeScreen[index + 6]">
+            <p class="answer" v-if="isOpenOnLargeScreen(index + 6)">
               {{ item.description }}
             </p>
           </Transition>
@@ -285,19 +285,9 @@ const list = [
   },
 ]
 
-const isOpen = ref(list.map(() => false))
-
-const toggle = (index: number) => {
-  isOpen.value = isOpen.value.map((value, i) => (i === index ? !value : value))
-}
-
-const isOpenOnLargeScreen = ref(list.map(() => false))
-
-const toggleOnLargeScreen = (index: number) => {
-  isOpenOnLargeScreen.value = isOpenOnLargeScreen.value.map((value, i) =>
-    i === index ? !value : value,
-  )
-}
+const { isOpen, toggle } = useToggleList(list)
+const { isOpen: isOpenOnLargeScreen, toggle: toggleOnLargeScreen } =
+  useToggleList(list)
 
 const isLargeScreen = useIsLargeScreen(1440)
 </script>

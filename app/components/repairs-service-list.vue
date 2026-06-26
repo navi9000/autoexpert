@@ -58,11 +58,7 @@ const list = [
   },
 ]
 
-const isOpen = ref(list.map(() => false))
-
-const toggle = (index: number) => {
-  isOpen.value = isOpen.value.map((value, i) => (i === index ? !value : value))
-}
+const { isOpen, toggle } = useToggleList(list)
 </script>
 
 <template>
@@ -82,7 +78,7 @@ const toggle = (index: number) => {
             :src="assetPath('/img/plus.svg')"
             alt="plus"
             class="img"
-            :class="isOpen[index] ? 'img_rotate' : ''"
+            :class="isOpen(index) ? 'img_rotate' : ''"
             @click="toggle(index)"
           />
         </template>

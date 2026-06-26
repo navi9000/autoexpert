@@ -14,21 +14,14 @@
       </swiper-slide>
     </swiper-container>
     <div v-else-if="isLargeScreen" class="grid">
-      <MainServiceCard
-        :title="list[0]!.title"
-        :description="list[0]!.description"
-      />
-      <img :src="assetPath('/img/main_services_1.webp')" alt="services" class="img" />
-      <MainServiceCard
-        :title="list[1]!.title"
-        :description="list[1]!.description"
-      />
-      <img :src="assetPath('/img/main_services_2.webp')" alt="services" class="img" />
-      <MainServiceCard
-        :title="list[2]!.title"
-        :description="list[2]!.description"
-      />
-      <img :src="assetPath('/img/main_services_3.webp')" alt="services" class="img" />
+      <template v-for="(item, index) in list">
+        <MainServiceCard :title="item.title" :description="item.description" />
+        <img
+          :src="assetPath(`/img/main_services_${index + 1}.webp`)"
+          alt="services"
+          class="img"
+        />
+      </template>
     </div>
   </Container>
 </template>
