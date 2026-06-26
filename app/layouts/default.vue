@@ -1,13 +1,5 @@
 <script setup lang="ts">
-interface NavItem {
-  label: string
-  to: string
-}
-interface Props {
-  nav: NavItem[]
-}
-
-const props = defineProps<Props>()
+import { nav } from "~/kernel/navigation"
 
 const menuIsOpen = ref(false)
 
