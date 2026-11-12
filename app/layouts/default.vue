@@ -2,6 +2,10 @@
 import { nav } from "~/kernel/navigation"
 
 const menuIsOpen = ref(false)
+const companyName = "AUTOEXPERT"
+const phoneNumber = "+357 25 123 456"
+const phoneHref = "tel:+35725123456"
+const hoursText = "Ежедневно с 09:00 до 21:00"
 
 const toggleMenu = () => {
   menuIsOpen.value = !menuIsOpen.value
@@ -13,12 +17,16 @@ const isLargeScreen = useIsLargeScreen()
 <template>
   <Container class="header-container">
     <header class="header">
-      <NuxtLink to="/" class="logo">Logo</NuxtLink>
+      <NuxtLink to="/" class="logo">{{ companyName }}</NuxtLink>
       <div class="textwrapper" v-if="isLargeScreen">
-        <a href="tel:00000000000" class="phone">+000 0000 00 00</a>
-        <p class="hours">Ежедневно с 09:00 до 21:00</p>
+        <a :href="phoneHref" class="phone">{{ phoneNumber }}</a>
+        <p class="hours">{{ hoursText }}</p>
       </div>
-      <Button variant="default" filling="transparent" v-if="isLargeScreen"
+      <Button
+        v-if="isLargeScreen"
+        variant="default"
+        filling="transparent"
+        :href="phoneHref"
         >Заказать звонок</Button
       >
     </header>
@@ -29,7 +37,7 @@ const isLargeScreen = useIsLargeScreen()
   <Transition name="navmenu">
     <nav v-if="menuIsOpen" class="menucontainer">
       <ul class="menulist">
-        <li v-for="{ label, to } in nav" class="menulinkwrapper">
+        <li v-for="{ label, to } in nav" :key="`${label}-${to}`" class="menulinkwrapper">
           <div class="menulinkinnerwrapper">
             <NuxtLink :to class="menulink" @click="toggleMenu">{{
               label

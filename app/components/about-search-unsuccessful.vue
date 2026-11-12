@@ -22,7 +22,7 @@ const shapeImage = {
           Оставьте заявку. Мы обязательно свяжемся с вами в ближайшее время и
           решим все вопросы
         </p>
-        <Button filling="solid">Оставить звонок</Button>
+        <Button :href="'tel:+35725123456'" filling="solid">Оставить звонок</Button>
       </div>
     </Container>
     <div v-else-if="isLargeScreen" class="container-large">
@@ -31,7 +31,7 @@ const shapeImage = {
         Оставьте заявку. Мы обязательно свяжемся с вами в ближайшее время и
         решим все вопросы
       </p>
-      <Button filling="solid">Оставить звонок</Button>
+      <Button :href="'tel:+35725123456'" filling="solid">Оставить звонок</Button>
     </div>
   </section>
 </template>

@@ -5,20 +5,24 @@
       <p class="subheading">Что мы проверяем в автомобиле</p>
     </div>
     <div v-if="isLargeScreen !== null && !isLargeScreen" class="list-container">
-      <Accordion v-for="(item, index) in list" class="accordion-item">
+      <Accordion
+        v-for="(item, index) in list"
+        :key="`${item.title}-${index}`"
+        class="accordion-item"
+      >
         <template #question>
-          <div class="question-container">
-            <img :src="item.icon" alt="icon" class="icon" />
-            <p class="question">{{ item.title }}</p>
-          </div>
+          <span class="question-container">
+            <img :src="item.icon" alt="" aria-hidden="true" class="icon" />
+            <span class="question">{{ item.title }}</span>
+          </span>
         </template>
-        <template #icon>
+        <template #icon="{ isOpen }">
           <img
             :src="assetPath('/img/plus.svg')"
-            alt="plus"
+            alt=""
+            aria-hidden="true"
             class="img"
-            :class="isOpen(index) ? 'img_rotate' : ''"
-            @click="toggle(index)"
+            :class="isOpen ? 'img_rotate' : ''"
           />
         </template>
         <template #answer>
@@ -31,6 +35,7 @@
       <div>
         <div
           v-for="(item, index) in list.slice(0, 6)"
+          :key="`${item.title}-${index}`"
           class="accordion-item"
           @mouseenter="toggleOnLargeScreen(index)"
           @mouseleave="toggleOnLargeScreen(index)"
@@ -49,6 +54,7 @@
       <div>
         <div
           v-for="(item, index) in list.slice(6, 12)"
+          :key="`${item.title}-${index}`"
           class="accordion-item"
           @mouseenter="toggleOnLargeScreen(index + 6)"
           @mouseleave="toggleOnLargeScreen(index + 6)"

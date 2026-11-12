@@ -15,7 +15,6 @@ const questionList = [
 ]
 
 const assetPath = useAssetPath()
-const { isOpen, toggle } = useToggleList(questionList)
 </script>
 
 <template>
@@ -24,17 +23,17 @@ const { isOpen, toggle } = useToggleList(questionList)
       <Heading tag="h2">FAQ</Heading>
       <p class="subheading">Спрашивали — отвечаем</p>
       <div class="questionlist">
-        <Accordion v-for="(item, index) in questionList" class="item">
+        <Accordion v-for="(item, index) in questionList" :key="`${item.q}-${index}`" class="item">
           <template #question>
-            <p class="question" @click="toggle(index)">{{ item.q }}</p>
+            <span class="question">{{ item.q }}</span>
           </template>
-          <template #icon>
+          <template #icon="{ isOpen }">
             <img
               :src="assetPath('/img/plus.svg')"
-              alt="plus"
+              alt=""
+              aria-hidden="true"
               class="img"
-              :class="isOpen(index) ? 'img_rotate' : ''"
-              @click="toggle(index)"
+              :class="isOpen ? 'img_rotate' : ''"
             />
           </template>
           <template #answer>

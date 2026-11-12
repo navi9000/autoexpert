@@ -2,15 +2,25 @@
 interface Props {
   iconSrc: string
   label: string
+  href?: string
+  target?: string
 }
 
-defineProps<Props>()
+const { iconSrc, label, href, target } = defineProps<Props>()
 </script>
 
 <template>
   <div class="group">
-    <img :src="iconSrc" alt="icon" class="img" />
-    <p class="label">{{ label }}</p>
+    <img :src="iconSrc" alt="" aria-hidden="true" class="img" />
+    <component
+      :is="href ? 'a' : 'p'"
+      class="label"
+      :href="href"
+      :target="target"
+      :rel="target === '_blank' ? 'noopener noreferrer' : undefined"
+    >
+      {{ label }}
+    </component>
   </div>
 </template>
 
@@ -36,6 +46,7 @@ defineProps<Props>()
   font-size: 16px;
   line-height: 156%;
   color: #fff;
+  text-decoration: none;
 
   @media screen and (min-width: 900px) {
     font-size: 20px;

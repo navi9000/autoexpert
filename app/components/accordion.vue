@@ -1,17 +1,28 @@
 <script setup lang="ts">
 const isOpen = ref(false)
+const answerId = `accordion-answer-${useId()}`
+
+const toggle = () => {
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <template>
   <div class="accordion">
-    <div class="questioncontainer">
-      <slot name="question" />
-      <div class="iconwrapper" @click="isOpen = !isOpen">
-        <slot name="icon" />
-      </div>
-    </div>
+    <button
+      type="button"
+      class="questioncontainer"
+      :aria-expanded="isOpen"
+      :aria-controls="answerId"
+      @click="toggle"
+    >
+      <slot name="question" :is-open="isOpen" />
+      <span class="iconwrapper">
+        <slot name="icon" :is-open="isOpen" />
+      </span>
+    </button>
     <Transition name="answerwrapper">
-      <div v-if="isOpen" class="answer">
+      <div v-if="isOpen" :id="answerId" class="answer" role="region">
         <slot name="answer" />
       </div>
     </Transition>
@@ -19,12 +30,34 @@ const isOpen = ref(false)
 </template>
 
 <style scoped>
+.accordion {
+  width: 100%;
+}
+
 .questioncontainer {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
   gap: 10px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+.questioncontainer:focus-visible,
+.iconwrapper:focus-visible {
+  outline: 2px solid var(--color-theme);
+  outline-offset: 4px;
+}
+
+.iconwrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .answerwrapper-enter-active,

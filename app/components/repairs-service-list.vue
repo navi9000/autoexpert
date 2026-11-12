@@ -57,8 +57,6 @@ const list = [
     img: assetPath("/img/services-9.webp"),
   },
 ]
-
-const { isOpen, toggle } = useToggleList(list)
 </script>
 
 <template>
@@ -68,18 +66,19 @@ const { isOpen, toggle } = useToggleList(list)
       <Accordion
         v-if="isLargeScreen !== null && !isLargeScreen"
         v-for="(item, index) in list"
+        :key="`${item.title}-${index}`"
         class="accordion"
       >
         <template #question>
-          <p class="question" @click="toggle(index)">{{ item.title }}</p>
+          <span class="question">{{ item.title }}</span>
         </template>
-        <template #icon>
+        <template #icon="{ isOpen }">
           <img
             :src="assetPath('/img/plus.svg')"
-            alt="plus"
+            alt=""
+            aria-hidden="true"
             class="img"
-            :class="isOpen(index) ? 'img_rotate' : ''"
-            @click="toggle(index)"
+            :class="isOpen ? 'img_rotate' : ''"
           />
         </template>
         <template #answer>
@@ -88,7 +87,8 @@ const { isOpen, toggle } = useToggleList(list)
       </Accordion>
       <div v-else-if="isLargeScreen" class="grid">
         <ServiceCard
-          v-for="item in list"
+          v-for="(item, index) in list"
+          :key="`${item.title}-${index}`"
           :title="item.title"
           :description="item.description"
           :img-src="item.img"

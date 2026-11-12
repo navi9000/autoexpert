@@ -22,7 +22,7 @@ const list = ["Техническая проверка", "Выездная пр�
       <ul class="list">
         <li v-for="item in list">{{ item }}</li>
       </ul>
-      <Button filling="solid">Задать вопрос</Button>
+      <Button :href="'mailto:info@autoexpert.com.cy'" filling="solid">Задать вопрос</Button>
     </div>
     <img
       v-if="isLargeScreen !== null && !isLargeScreen"

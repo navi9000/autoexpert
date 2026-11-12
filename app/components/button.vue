@@ -1,21 +1,27 @@
 <script setup lang="ts">
-interface DefaultButton {
+interface BaseButton {
+  href?: string
+  target?: string
+}
+
+interface DefaultButton extends BaseButton {
   variant?: "default"
   filling: "solid" | "transparent"
 }
 
-interface MenuButton {
+interface MenuButton extends BaseButton {
   variant: "menu"
   filling?: never
 }
 
 type Props = DefaultButton | MenuButton
 
-const { variant = "default" } = defineProps<Props>()
+const { variant = "default", href, target, filling } = defineProps<Props>()
 </script>
 
 <template>
-  <button
+  <component
+    :is="href ? 'a' : 'button'"
     class="button"
     :class="[
       {
@@ -23,9 +29,12 @@ const { variant = "default" } = defineProps<Props>()
         [`button_filling${filling}`]: filling,
       },
     ]"
+    :href="href"
+    :target="target"
+    :rel="target === '_blank' ? 'noopener noreferrer' : undefined"
   >
     <slot />
-  </button>
+  </component>
 </template>
 
 <style scoped>
